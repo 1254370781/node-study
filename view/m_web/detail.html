@@ -1,0 +1,20 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<section class="container">
+    <div class="row">
+        <div class="col-12 pb-3 pt-4 wzBor d-flex flex-column align-items-center">
+            <span class="prDetit w-100 d-hi">{{ data.title }}</span>
+            <span class="prDetime mt-1">{{ data.updatetime }}</span>
+        </div>
+        <!-- 详情内容 -->
+        <div class="col-12 d-flex flex-wrap pt-3 mb-3 prDecon">{{@data.content}}</div>
+        <div class="detailx d-flex flex-wrap w-100">
+            <!-- 上一条信息 -->
+            <a href="/detail?id={{up.id}}" class="detailx2 col-6 d-hi">{{ up.title }}</a>
+            <!-- 下一条信息 -->
+            <a href="/detail?id={{down.id}}" class="detailx2 col-6 d-hi">{{ down.title }}</a>
+        </div>
+    </div>
+</section>
+{{ /block }}

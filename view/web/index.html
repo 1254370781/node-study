@@ -1,0 +1,31 @@
+{{ extend './common/main.html'}}
+{{block 'content'}}
+<main>
+    <section class="indexBanner">
+        <ul class="rslides" id="slider">
+            {{ each slide }}
+            <li><img src="{{ $value.img }}" alt="{{ $value.title }}"></li>
+            {{ /each }}
+            <!-- <li><img src="http://cdkljsm.com/images/upload/20200424/1587713379273725.jpg"></li>
+            <li><img src="http://cdkljsm.com/images/upload/20200424/1587713395897772.jpg"></li>
+            <li><img src="http://cdkljsm.com/images/upload/20200424/1587713408116310.jpg"></li>
+            <li><img src="http://cdkljsm.com/images/upload/20200424/1587713421827242.jpg"></li>
+            <li><img src="http://cdkljsm.com/images/upload/20200424/1587713434727667.jpg"></li> -->
+        </ul>
+    </section>
+</main>
+<script src="web/js/responsiveslides.min.js"></script>
+<script>
+    $(document).ready(function (e) {
+        $("#slider").responsiveSlides({
+            auto: true,
+            pager: true,
+            nav: false,
+            speed: 1000,
+            timeout: 4500,
+            // 对应外层div的class : slide_container
+            namespace: "slide"
+        });
+    });
+</script>
+{{ /block }}

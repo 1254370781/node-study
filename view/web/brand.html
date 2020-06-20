@@ -1,0 +1,41 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<main>
+    <div class="content">
+        <div class="contentMain">
+            <div class="indexMall">
+                <div class="indexMallItem newPro">
+                    <div class="indexBox newProImg"><a href="/brand/louiseOdier"><img src="{{ louiseOdier.pic }}" alt="{{ louiseOdier.title }}"></a></div>
+                    <div class="indexTxt">
+                        <p class="indexTxtCn">{{ louiseOdier.Subtitle }}</p>
+                        <p class="indexTxtEn">{{ louiseOdier.title }}</p>
+                    </div>
+                </div>
+                <div class="indexMallItem newGirl">
+                    <div class="indexBox newGirlImg"><a href="/brand/vicfine"><img src="{{ vicfine.pic }}" alt="{{ vicfine.title }}"></a></div>
+                    <div class="indexTxt">
+                        <p class="indexTxtCn">{{ vicfine.Subtitle }}</p>
+                        <p class="indexTxtEn">{{ vicfine.title }}</p>
+                    </div>
+                </div>
+                <div class="indexMallItem newBoy">
+                    <div class="indexBox newBoyImg "><a href="javascript:;"><img src="http://cdkljsm.com/template/webpage/images/brand03.jpg" alt=""></a></div>
+                    <div class="indexTxt">
+                        <p class="indexTxtCn">年青、浪漫、女人味</p>
+                        <p class="indexTxtEn">凯利</p>    
+                    </div>
+                </div>
+                <div class="indexMallItem newBaby">
+                    <div class="indexBox newBabyImg "><a href="/brand/riinaClare"><img src="{{ riinaClare.pic }}" alt="{{ riinaClare.title }}"></a></div>
+                    <div class="indexTxt">
+                        <p class="indexTxtCn">{{ riinaClare.Subtitle }}</p>
+                        <p class="indexTxtEn">{{ riinaClare.title }}</p>
+                    </div>
+                </div>
+                <div class="indexLinkMall"></div>
+            </div>
+        </div>
+    </div>
+</main>
+{{ /block }}

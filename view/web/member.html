@@ -1,0 +1,44 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<main>
+    <section class="w-100 fl">
+        <div class="w-at">
+            <div class="w-100 fl jo-t">
+                <p class="jo-ttit">{{ title }}</p>
+                <div class="w-100 fl vi-li" id="content">
+                    {{ each datalist }}
+                    <a href="/detail?id={{ $value.id }}" class="vi-ge fl">
+                        <div class="w-100 fl vi-geimg ps-re">
+                            <img class="img-center ne-geho" src="{{ $value.img }}" alt="{{ $value.title }}">
+                        </div>
+                    </a>
+                    {{ /each }}
+                </div>
+                <div class="tx-ct w-100 fl" id="pageContent">
+                    <!-- data-id  是查询uid内容列表   其他的三个data-  主要是分页 -->
+                    <span style="display: none;" id="hiddenPage" data-id="{{data.id}}" data-pagelength="{{pagelength.length}}" data-pagestart="{{pagestart}}" data-pagenum="{{ pagenum }}"></span>
+                    <ul class="d-i-block">
+                        <li class="fl"><a onclick="nextPage(this,'上一页')" class="pagel {{ if pagestart == 0 }} pageDisable {{/if}}" href="javascript:;">上一页</a></li>
+                        {{ each pagelength }}
+                        <li class="fl"><a class="pagel {{ if $index == pagestart }} pagelDetail {{/if}} " onclick="nextPage(this)" data-pageid="{{$index}}" href="javascript:;">{{ $index +1 }}</a></li>
+                        {{ /each }}
+                        <li class="fl"><a onclick="nextPage(this,'下一页')" class="pagel {{ if pagelength.length == pagestart +1 }} pageDisable {{/if}}" href="javascript:;">下一页</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- 模板--列表 -->
+<script type="text/html" id="template">
+    <% for(var i = 0; i < data.length; i++){ %>
+    <a href="/detail?id=<%=data[i].id%>" class="vi-ge fl">
+        <div class="w-100 fl vi-geimg ps-re">
+            <img class="img-center ne-geho" src="<%= data[i].img %>" alt="<%= data[i].title %>">
+        </div>
+    </a>
+    <% } %>
+</script>
+{{include './common/pageChange.html'}}
+{{ /block }}

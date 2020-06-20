@@ -1,0 +1,29 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<section class="container">
+    <div class="row">
+        <div class="w-100 d-flex flex-wrap mt-4 mb-4">
+            <div class="w-100"><img class="img-fiuld" src="{{__HOST__}}/{{ data.banner }}" alt="{{ data.title }}"></div>
+            <div class="w-100 d-flex flex-wrap">
+                <div class="col-12 d-flex flex-wrap joZscon pt-3 pb-1">
+                    <p class="riStrat mb-1">STRAT</p>
+                    <span>{{@data.content}}</span>
+                </div>
+                <div class="col-12 d-flex flex-wrap mt-2">
+                    <div class="w-100 d-flex flex-wrap riCon p-2">
+                        <div class="w-100 d-flex flex-wrap align-items-center mb-2"><span class="viCononeSp mr-3">01</span><span>个性潮流的生活文化品牌</span></div>
+                        <div class="w-100 d-flex flex-wrap align-items-center mb-2"><span class="viCononeSp mr-3">02</span><span>融合意大利独特设计</span></div>
+                        <div class="w-100 d-flex flex-wrap align-items-center mb-2"><span class="viCononeSp mr-3">03</span><span>提炼东西方时尚精粹</span></div>
+                        <div class="w-100 d-flex flex-wrap align-items-center mb-2"><span class="viCononeSp mr-3">04</span><span>深受都市女性的青睐</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 mt-2"><img class="img-fiuld w-100" src="{{__HOST__}}/m_web/images/RiinaClare02.jpg" alt="{{ data.title }}"></div>
+            <div class="w-100 mt-2"><img class="img-fiuld w-100" src="{{__HOST__}}/m_web/images/RiinaClare03.jpg" alt="{{ data.title }}"></div>
+            <div class="w-100 mt-2"><img class="img-fiuld w-100" src="{{__HOST__}}/m_web/images/RiinaClare04.jpg" alt="{{ data.title }}"></div>
+            <div class="w-100 mt-2"><img class="img-fiuld w-100" src="{{__HOST__}}/m_web/images/RiinaClare05.jpg" alt="{{ data.title }}"></div>
+        </div>
+    </div>
+</section>
+{{ /block }}

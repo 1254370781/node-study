@@ -1,0 +1,36 @@
+<!--_menu 作为公共模版分离出去-->
+<aside class="Hui-aside">
+	<div class="menu_dropdown bk_2">
+		{{ each __titleUrl__ }}
+		<dl id="menu-article">
+			<dt><i class="Hui-iconfont">&#xe616;</i> <a class="navColumnA" href="/admin/editNavColumn?id={{ $value.id }}" title="{{ $value.title }}">{{ $value.title }}</a>{{ if $value.soncolumn.length != 0 }}<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>{{/if}}</dt>
+			<dd>
+				<ul>
+					{{ each $value.soncolumn }}
+					<li><a href="/admin/editNavColumn?sonId={{ $value.id }}" title="{{ $value.title }}">{{ $value.title }}</a></li>
+					{{ /each }}
+				</ul>
+			</dd>
+		</dl>
+		{{ /each }}
+		<dl id="menu-picture">
+			<dt><i class="Hui-iconfont">&#xe613;</i> 新闻产品类型栏目 {{ if __navList__.length !=0 }} <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>{{/if}}</dt>
+			<dd style="display: block;">
+				<ul>
+					{{ each __navList__ }}
+					<li><a href="/admin/navList?id={{ $value.uid }}" title="{{ $value.title }}">{{ $value.title }}</a></li>
+					{{ /each }}
+				</ul>
+			</dd>
+		</dl>
+		<dl id="slide">
+			<dt><i class="Hui-iconfont">&#xe616;</i> <a class="navColumnA" href="/admin/slide" title="幻灯片">幻灯片</a></dt>
+		</dl>
+		<dl id="site">
+			<dt><i class="Hui-iconfont">&#xe616;</i> <a class="navColumnA" href="/admin/site" title="幻灯片">站点信息</a></dt>
+		</dl>
+	</div>
+</aside>
+<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);"></a>
+</div>
+<!--/_menu 作为公共模版分离出去-->

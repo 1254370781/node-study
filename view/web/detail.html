@@ -1,0 +1,24 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<main>
+    <section class="w-100 fl">
+        <div class="w-at1">
+            <div class="w-100 fl">
+                <div class="w-100 fl ne-dt tx-ct">
+                    <h2 class="ne-dth2 d-hi">{{ data.title }}</h2>
+                    <p class="ne-dtp">{{ data.updatetime }}</p>
+                </div>
+                <!-- 详情内容 -->
+                <div class="ne-dc w-100 fl">{{@data.content}}</div>
+                <div class="detailx w-100 fl">
+                    <!-- 上一条信息 -->
+                    <a href="/detail?id={{up.id}}" class="detailx2 d-hi fl">{{ up.title }}</a>
+                    <!-- 下一条信息 -->
+                    <a href="/detail?id={{down.id}}" class="detailx2 d-hi fr">{{ down.title }}</a>
+                </div>
+            </div>
+        </div>
+   </section> 
+</main>
+{{ /block }}

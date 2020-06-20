@@ -1,0 +1,62 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<main>
+    <section class="w-100 fl">
+        <div class="w-at">
+            <div class="w-100 fl ri-t">
+                <img class="img-fiuld fl" src="{{__HOST__}}/{{ data.banner }}" alt="{{ data.title }}">
+            </div>
+            <div class="w-100 fl ri-a">
+                <div class="ri-al fl">
+                    <div class="w-100 fl ri-alt">
+                        <span class="ri-alsp fl">STRAT</span>
+                        <img class="img-fiuld ri-ali" src="{{__HOST__}}/web/images/Riina02.jpg" alt="{{ data.title }}">
+                    </div>
+                    {{@data.content}}
+                    <!-- <p>An action plan with executable,</p>
+                    <p>actionable and creative ideas can effectively</p>
+                    <p>enhance the company's reputation</p>
+                    <p>and</p>
+                    <p>brand reputation.</p> -->
+                </div>
+                <div class="ri-ar fl">
+                    <div class="w-100 fl"><span class="ri-arsp fl">01</span><span class="fl ri-arsp1">个性潮流的生活文化品牌</span></div>
+                    <div class="w-100 fl"><span class="ri-arsp fl">02</span><span class="fl ri-arsp1">融合意大利独特设计</span></div>
+                    <div class="w-100 fl"><span class="ri-arsp fl">03</span><span class="fl ri-arsp1">提炼东西方时尚精粹</span></div>
+                    <div class="w-100 fl"><span class="ri-arsp fl">04</span><span class="fl ri-arsp1">深受都市女性的青睐</span></div>
+                </div>
+            </div>
+            <div class="w-100 fl ri-b">
+                <div class="w-100 fl">
+                    <img class="img-fiuld fr" src="{{__HOST__}}/web/images/Riina03.jpg" alt="{{ data.title }}">
+                </div>
+                <div class="ri-bm w-100 fl">
+                    <img class="img-fiuld fl" src="{{__HOST__}}/web/images/Riina05.jpg" alt="{{ data.title }}">
+                    <img class="img-fiuld fr" src="{{__HOST__}}/web/images/Riina04.jpg" alt="{{ data.title }}">
+                </div>
+            </div>
+            <div class="ri-c w-100 fl">
+                <div class="w-100 fl">
+                    <img class="img-fiuld fl" src="{{__HOST__}}/web/images/Riina06.jpg" alt="{{ data.title }}">
+                    <img class="img-fiuld fl" src="{{__HOST__}}/web/images/Riina07.jpg" alt="{{ data.title }}">
+                    <img class="img-fiuld fl" src="{{__HOST__}}/web/images/Riina08.jpg" alt="{{ data.title }}">
+                    <img class="img-fiuld fl" src="{{__HOST__}}/web/images/Riina10.jpg" alt="{{ data.title }}">
+                    <img class="img-fiuld fl" src="{{__HOST__}}/web/images/Riina09.jpg" alt="{{ data.title }}">
+                </div>
+            </div>
+            <div class="ri-d w-100 fl ps-re">
+                <div class="ri-dl fl">
+                    <img class="img-fiuld fl" src="{{__HOST__}}/web/images/Riina11.jpg" alt="{{ data.title }}">
+                    <img class="img-fiuld fl" src="{{__HOST__}}/web/images/Riina12.jpg" alt="{{ data.title }}">
+                    <img class="img-fiuld fl" src="{{__HOST__}}/web/images/Riina14.jpg" alt="{{ data.title }}">
+                    <img class="img-fiuld fl" src="{{__HOST__}}/web/images/Riina15.jpg" alt="{{ data.title }}">
+                </div>
+                <span class="ri-dbg"></span>
+                <span class="ri-dname">Riina Clar</span>
+                <img class="img-fiuld ri-dimg" src="{{__HOST__}}/web/images/Riina13.jpg" alt="{{ data.title }}">
+            </div>
+        </div>
+    </section>
+</main>
+{{ /block }}

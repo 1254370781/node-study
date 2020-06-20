@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="Bookmark" href="favicon.ico" >
+    <link rel="Shortcut Icon" href="favicon.ico" />
+    <title>后台管理系统</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    {{ include '../common/linker.html' }}
+</head>
+<body>
+    <!--引入头部-->
+    {{include '../common/header.html'}}
+    <!--左侧边栏-->
+    {{include '../common/aside.html'}}
+    <!--中间留坑-->
+    <section class="Hui-article-box">
+        {{include '../common/top.html'}}
+        <div class="Hui-article">
+            {{block 'content'}}{{/block}}
+        </div>
+    </section>
+    <!--引入底部-->
+    {{include '../common/footer.html'}}
+    <!-- 预留底部每个页面不同的js -->
+    {{ block 'footerContent' }}{{ /block }}
+</body>
+</html>

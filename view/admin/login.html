@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="{{__HOST__}}/admin/css/login.css">
+    <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+
+</head>
+<body>
+    <div class="login">
+        <form action="" method="post" id="submit">
+            <div class="center">
+                <h1>登录页面</h1>
+                <div class="inputLi">
+                    <strong>账户</strong>
+                    <input type="text" id="username" name="username" placeholder="请输入账号">
+                </div>
+                <div class="inputLi">
+                    <strong>密码</strong>
+                    <input type="text" id="password" name="password" placeholder="请输入密码">
+                </div>
+                <div class="inputLi">
+                    <input type="text" id="getCode" name="vcode" placeholder="请输入验证码">
+                    <img src="/admin/loginCode" onclick="this.src='/admin/loginCode?'+ Date.now()">
+                </div>
+                <!-- <div class="inputLi">
+                    <input type="file" name="file" id="file">
+                </div> -->
+                <div class="inputLi">
+                    <button>登录</button>
+                </div>
+                <a class="loginA" href="/admin/register">还没有账号？去注册!</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        getQue = ele=> document.querySelector(ele).value;
+        document.querySelector('#submit').addEventListener('submit',function(e) {
+            e.preventDefault();
+
+            var fd = new FormData();
+            var inputs = document.querySelectorAll('input');
+            fd.append('username',inputs[0].value);  //添加name等于title的value值
+            fd.append('password',inputs[1].value);
+            fd.append('code',inputs[2].value);
+            // type="file" value就是文件的路径
+            // fd.append('file',inputs[3].files[0]);
+
+            if( getQue('#username') != '' && getQue('#password') != '' && getQue('#getCode') != '' ) {
+                // axios.post('/admin/doLogin', {username: getQue('#username'), password: getQue('#password'), code: getQue('#getCode'), file: formData})
+                axios.post('/admin/doLogin', fd)
+                .then(function (response) {
+                    if (response.data.code == '002') {
+                        alert(response.data.msg);
+                    }
+                    if(response.data.code == '001') {
+                        window.location.href = '/admin';
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            }else {
+                alert('不能为空！');
+            }
+        },false)
+    </script>
+</body>
+</html>

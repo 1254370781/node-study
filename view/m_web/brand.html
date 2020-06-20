@@ -1,0 +1,30 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<section class="container">
+    <div class="row">
+        <div class="w-100 d-flex flex-wrap mt-4">
+            <a href="/brand/louiseOdier" class="col-12 mb-4 d-flex flex-wrap flex-column align-items-center">
+                <img class="img-fiuld" src="{{ louiseOdier.pic }}" alt="{{ louiseOdier.title }}">
+                <p class="brfTit mt-2 mb-2">{{ louiseOdier.Subtitle }}</p>
+                <span class="brTit">{{ louiseOdier.title }}</span>
+            </a>
+            <a href="/brand/vicfine" class="col-12 mb-4 d-flex flex-wrap flex-column align-items-center">
+                <img class="img-fiuld" src="{{ vicfine.pic }}" alt="{{ vicfine.title }}">
+                <p class="brfTit mt-2 mb-2">{{ vicfine.Subtitle }}</p>
+                <span class="brTit">VICFINE</span>
+            </a>
+            <a href="javascript:;" class="col-12 mb-4 d-flex flex-wrap flex-column align-items-center">
+                <img class="img-fiuld" src="http://cdkljsm.com/template/webpage/images/brand03.jpg" alt="凯利">
+                <p class="brfTit mt-2 mb-2">年青、浪漫、女人味</p>
+                <span class="brTit">凯利</span>
+            </a>
+            <a href="/brand/riinaClare" class="col-12 mb-4 d-flex flex-wrap flex-column align-items-center">
+                <img class="img-fiuld" src="{{ riinaClare.pic }}" alt="{{ riinaClare.title }}">
+                <p class="brfTit mt-2 mb-2">{{ riinaClare.Subtitle }}</p>
+                <span class="brTit">{{ riinaClare.title }}</span>
+            </a>
+        </div>
+    </div>
+</section>
+{{ /block }}

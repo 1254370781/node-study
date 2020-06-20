@@ -1,0 +1,73 @@
+{{ extend './common/main.html'}}
+{{block 'content'}}
+<!-- 轮播 -->
+<section class="container" id="floor_height">
+  <div class="row">
+      <div class="swiper-container" id="box184152224">
+          <div class="swiper-wrapper">
+            {{ each slide }}
+            <div class="swiper-slide">
+              <img class="img-fiuld w-100" src="{{ $value.img }}" alt="{{ $value.title }}">
+            </div>
+            {{ /each }}
+          </div>
+          <!-- 点点点 -->
+          <div class="swiper-pagination"></div>
+      </div>
+  </div>
+</section>
+<section class="container">
+  <div class="row">
+      <div class="w-100 d-flex flex-wrap mt-4">
+          <a href="/brand/louiseOdier" class="col-12 mb-4 d-flex flex-wrap flex-column align-items-center">
+              <img class="img-fiuld" src="{{ louiseOdier.pic }}" alt="{{ louiseOdier.title }}">
+              <p class="brfTit mt-2 mb-2">{{ louiseOdier.Subtitle }}</p>
+              <span class="brTit">{{ louiseOdier.title }}</span>
+          </a>
+          <a href="/brand/vicfine" class="col-12 mb-4 d-flex flex-wrap flex-column align-items-center">
+              <img class="img-fiuld" src="{{ vicfine.pic }}" alt="{{ vicfine.title }}">
+              <p class="brfTit mt-2 mb-2">{{ vicfine.Subtitle }}</p>
+              <span class="brTit">{{ vicfine.title }}</span>
+          </a>
+          <a href="javascript:;" class="col-12 mb-4 d-flex flex-wrap flex-column align-items-center">
+              <img class="img-fiuld" src="http://cdkljsm.com/template/webpage/images/brand03.jpg" alt="凯利">
+              <p class="brfTit mt-2 mb-2">年青、浪漫、女人味</p>
+              <span class="brTit">凯利</span>
+          </a>
+          <a href="/brand/riinaClare" class="col-12 mb-4 d-flex flex-wrap flex-column align-items-center">
+              <img class="img-fiuld" src="{{ riinaClare.pic }}" alt="{{ riinaClare.title }}">
+              <p class="brfTit mt-2 mb-2">{{ riinaClare.Subtitle }}</p>
+              <span class="brTit">{{ riinaClare.title }}</span>
+          </a>
+      </div>
+  </div>
+</section>
+<style>
+  .swiper-pagination-bullet-active {
+    background-color: #4b2c27;
+  }
+</style>
+<script src="/m_web/js/swiper/swiper.jquery.min.js"></script>
+<script type="text/javascript">
+   // 轮播图
+    var swiper = new Swiper('#box184152224', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      effect: 'fade',
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '',
+        prevEl: '',
+      },
+      
+    });
+</script>
+{{ /block }}

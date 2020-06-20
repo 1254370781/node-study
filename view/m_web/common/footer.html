@@ -1,0 +1,36 @@
+<footer class="container f-m152">
+    <div class="row">
+        <div class="col-md-12 fl-bla justify-content-center">
+            <div class="fl-bei"><span id="copyrightyear"></span>{{ __site__.title }}<br/><a style="color: #666;" href="http://www.beian.miit.gov.cn">{{ __site__.recordNo }}</a></div>
+        </div>
+    </div>
+</footer>
+<div class="w-100 pt-2 pb-2 d-flex bo-di-fi justify-content-between">
+    <div class="col">
+        <a class="w-100 h-100 d-flex justify-content-center align-items-center  flex-column" href="/">
+        <img class="fool-img img-fiuld" src="/m_web/images/foot/shouye.png" alt="">
+        <span class="bo-di-fi-sp">首页</span>
+        </a>
+    </div>
+    <div class="col">
+        <a class="w-100 h-100 d-flex justify-content-center align-items-center  flex-column" href="tel:415643843413413">
+        <img class="fool-img img-fiuld" src="/m_web/images/foot/weibiaoti-.png" alt="">
+        <span class="bo-di-fi-sp">电话</span>
+        </a>
+    </div>
+    <div class="col">
+        <a class="w-100 h-100 d-flex justify-content-center align-items-center  flex-column" href="/contact">
+        <img class="fool-img img-fiuld" src="/m_web/images/foot/dingwei.png" alt="">
+        <span class="bo-di-fi-sp">联系</span>
+        </a>
+    </div>
+</div>
+<script type="text/javascript">
+    //显示版权年份
+    getyear();
+    function getyear(){
+        var now = new Date();
+        var year = now.getFullYear(); //获取当前年份 
+        document.getElementById('copyrightyear').innerHTML='Copyright © '+year;
+    }
+</script>

@@ -1,0 +1,295 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<article class="cl pd-20">
+    <div class="text-c">
+		<form action="" method="post">
+			<input type="hidden" value="{{ id }}" name="id" id="id">
+        	<input type="text" name="title" id="title" placeholder=" 资讯内容" style="width:250px" class="input-text">
+			<button class="btn btn-success" type="submit" id="submit"><i class="Hui-iconfont">&#xe665;</i> 搜内容</button>
+		</form>
+    </div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20">
+        <span class="l">
+        <a href="javascript:;" class="btn btn-danger radius" onclick="batchDelete(this)"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+        <a class="btn btn-primary radius" data-title="添加资讯" href="/admin/addNavList/{{id}}"><i class="Hui-iconfont">&#xe600;</i> 添加资讯</a>
+        </span>
+        <span class="r">共有数据：<strong>{{ datas.length }}</strong> 条</span>
+    </div>
+    <div class="mt-20">
+        <table class="table table-border table-bordered table-bg table-hover table-sort">
+            <thead>
+                <tr class="text-c">
+                    <th width="25"><input type="checkbox" name="" value="" data-select="false" onclick="selectAll(this)"></th>
+                    <th width="80">ID</th>
+					<th>标题</th>
+					<th width="200">图片</th>
+                    <th width="200">更新时间</th>
+                    <th width="150">发布状态</th>
+                    <th width="180">操作</th>
+                </tr>
+            </thead>
+            <tbody id="content">
+				{{ each datas }}
+                <tr class="text-c" height="67">
+                    <td><input type="checkbox" id="checkbox" value="" name="checkbox" data-id="{{$value.id}}"></td>
+                    <td>{{ $value.id }}</td>
+					<td class="text-center text-primary">{{ $value.title }}</td>
+					<td>
+						{{ if $value.img }}
+						<img style="max-width: 150px;height: auto;max-height: 50px;width: auto;" src="{{__HOST__}}/{{ $value.img }}">
+						{{ else }}
+						<img style="max-width: 150px;height: auto;max-height: 50px;width: auto;">
+						{{ /if }}
+					</td>
+                    <td>{{ $value.updatetime }}</td>
+                    <td class="td-status" id="releaseText" data-id='{{$value.id}}'>
+						{{ if $value.fabu == '否' }}
+						<span class="label label-defaunt radius">未发布</span>
+						{{ else }}
+						<span class="label label-success radius">已发布</span>
+						{{ /if }}
+					</td>
+                    <td class="f-14 td-manage">
+						<a style="text-decoration:none;" href="javascript:;">
+							{{ if $value.fabu == '否' }}
+							<i class="Hui-iconfont" data-id='{{$value.id}}' data-title="未发布" onclick="release(this)"></i>
+							{{ else }}
+							<i class="Hui-iconfont" data-id='{{$value.id}}' data-title="已发布" onclick="release(this)">&#xe6de;</i>
+							{{ /if }}
+						</a>
+						<a style="text-decoration:none" class="ml-5" href="/admin/editNavList?id={{$value.id}}" title="编辑">
+							<i class="Hui-iconfont">&#xe6df;</i>
+						</a>
+						<a style="text-decoration:none" class="ml-5" data-id="{{$value.id}}" id="delect" onclick="doDelete(this)" href="javascript:;" title="删除">
+							<i class="Hui-iconfont">&#xe6e2;</i>
+						</a>
+                    </td>
+				</tr>
+				{{ /each }}
+            </tbody>
+        </table>
+    </div>
+</article>
+{{ /block }}
+
+{{ block 'footerContent' }}
+<!--请在下方写此页面业务相关的脚本-->
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+<!-- 由于服务端的art-template和客户端的template-web有冲突，所以需要更改node_modules\art-template\lib\compile\defaults.js  
+	 把里面的rules: [nativeRule, artRule],改成rules: [artRule], 然后客户端的数据使用<%=%>调用，服务端的数据就使用{{}}调用 
+-->
+<script type="text/javascript" src="{{__HOST__}}/admin/js/template-web.js"></script>
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/datatables/1.10.15/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/laypage/1.2/laypage.js"></script>
+
+<!-- 模板--搜索 -->
+<script type="text/html" id="template">
+	<% for(var i = 0; i < data.length; i++){ %>
+    <tr class="text-c" height="67">
+		<td><input type="checkbox" id="checkbox" value="" name="checkbox" data-id="<%=data[i].id%>"></td>
+        <td><%=data[i].id%></td>
+		<td class="text-center text-primary"><%=data[i].title%></td>
+		<td>
+			<% if (data[i].img) { %>
+			<img style="max-width: 150px;height: auto;max-height: 50px;width: auto;" src="{{__HOST__}}/<%=data[i].img%>">
+			<% } else { %> 
+			<img style="max-width: 150px;height: auto;max-height: 50px;width: auto;">
+			<% } %>
+		</td>
+        <td><%=data[i].updatetime%></td>
+        <td class="td-status" id="releaseText" data-id='<%= data[i].id %>'>
+			<% if (data[i].fabu == '否') { %>
+			<span class="label label-defaunt radius">未发布</span>
+			<% } else { %> 
+			<span class="label label-success radius">已发布</span>
+			<% } %>
+		</td>
+        <td class="f-14 td-manage">
+			<a style="text-decoration:none;" href="javascript:;">
+				<% if (data[i].fabu == '否') { %>
+				<i class="Hui-iconfont" data-id='<%=data[i].id%>' data-title="未发布" onclick="release(this)"></i>
+				<% } else { %> 
+				<i class="Hui-iconfont" data-id='<%=data[i].id%>' data-title="已发布" onclick="release(this)">&#xe6de;</i>
+				<% } %>
+			</a>
+			<a style="text-decoration:none" class="ml-5" href="/admin/editNavList?id=<%=data[i].id%>" title="编辑">
+				<i class="Hui-iconfont">&#xe6df;</i>
+			</a>
+			<a style="text-decoration:none" class="ml-5" onclick="doDelete(this)" data-id="<%=data[i].id%>" href="javascript:;" title="删除">
+				<i class="Hui-iconfont">&#xe6e2;</i>
+			</a>
+        </td>
+	</tr>
+	<% } %>
+</script>
+
+<script type="text/javascript">
+$('.table-sort').dataTable({
+	"aaSorting": [[ 1, "desc" ]],//默认第几个排序
+	"bStateSave": true,//状态保存
+	"aoColumnDefs": [
+		//{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+		{"orderable":false,"aTargets":[0,5]}// 不参与排序的列
+	]
+});
+
+// 全选
+function selectAll(e) {
+	let select = e.dataset.select;
+	// console.log(select);
+	if(select == 'false') {
+		for (let i = 0; i < document.querySelectorAll('#checkbox').length; i++) {
+			document.querySelectorAll('#checkbox')[i].checked = true;
+		}
+		e.dataset.select = true;
+	}else {
+		for (let i = 0; i < document.querySelectorAll('#checkbox').length; i++) {
+			document.querySelectorAll('#checkbox')[i].checked = false;
+		}
+		e.dataset.select = false;
+	}
+}
+
+// 搜索框
+(function(){
+	document.getElementById('submit').addEventListener('click',(e)=>{
+		e.preventDefault();
+		let id = document.getElementById('id').value;  // id
+		let title = document.getElementById('title').value;	// title
+		axios.post('/admin/NavListSearch',{ id, title })
+		.then((res)=> {
+			console.log(res.data);
+			if (res.data.code == '002') {
+				layer.msg(res.data.msg,{icon:2,time:1000});
+			}else if(res.data.code == '001') {
+				let resData = template("template",res.data);
+				var content = document.getElementById("content");
+				content.innerHTML = resData;
+				layer.msg(res.data.msg,{icon:1,time:1000});
+			}
+			// window.location.replace(location.href);
+		})
+		.catch((err)=>{
+			console.log(err);
+		})
+		// console.log(id,title);
+	},false)
+}());
+
+// 删除 注（使用模板的话就要用这种行内绑定方式  要不然无效，也不能(function(){})()放在自执行里面）
+function doDelete(e) {
+	console.log(e); // <a id="delect" class="ml-5" style="text-decoration:none" data-id="14" onclick="doDelete(this)" href="javascript:;" title="删除">
+	let uid = document.getElementById('id').value;  // 获取栏目uid
+	let id = e.dataset.id;	// 获取id
+	layer.confirm(' 确认要删除吗？ ',function() {
+		if (id) {
+			axios.post('/admin/deleteNavList', { id, uid })  // 发送请求
+			.then(function (res) {
+				if (res.data.code == '002') {
+					layer.msg(res.data.msg,{icon:2,time:1000});
+					setTimeout(() => {
+						window.location.replace(location.href);
+					}, 1000);
+				}else if(res.data.code == '001') {
+					let resData = template("template",res.data);
+					var content = document.getElementById("content");
+					content.innerHTML = resData;
+					layer.msg(res.data.msg,{icon:1,time:1000});
+				}
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+		}
+		layer.closeAll('dialog');  // 关闭弹窗
+	})
+	// console.log(id);
+}
+
+/*发布/下架*/
+function release(e) {
+	// console.log(e);  // <i id="release" class="Hui-iconfont" data-id="14" data-title="未发布" onclick="release(this)">
+	let id = e.dataset.id;
+	let title = e.dataset.title;
+	let conTitle = '确认要下架吗？';   // 根据title  设定弹窗的内容
+	if (title == '未发布') {
+		conTitle = '确认要发布吗？';
+	}
+	layer.confirm(conTitle,function(){
+		console.log(id,title,conTitle);
+		if( id ) {  // 如果id存在  则证明有此记录
+			let data = { id, title }
+			axios.post('/admin/navListRelease', data)  // 发送请求
+			.then(function (response) {
+				console.log(response.data);
+				if (response.data.msg == '已发布') {
+					e.innerHTML = '&#xe6de;';
+					e.dataset.title = '已发布';
+					for (let i = 0; i < document.querySelectorAll('#releaseText').length; i++) {
+						if(document.querySelectorAll('#releaseText')[i].dataset.id == id) {
+							document.querySelectorAll('#releaseText')[i].innerHTML = `<span class="label label-success radius">已发布</span>`;
+						}
+					}
+					layer.msg(response.data.msg,{icon: 1,time:1000});
+				}else if(response.data.msg == '未发布') {
+					e.innerHTML = '';
+					e.dataset.title = '未发布';
+					for (let i = 0; i < document.querySelectorAll('#releaseText').length; i++) {
+						if(document.querySelectorAll('#releaseText')[i].dataset.id == id) {
+							document.querySelectorAll('#releaseText')[i].innerHTML = `<span class="label label-defaunt radius">未发布</span>`;
+						}
+					}
+					layer.msg(response.data.msg,{icon: 2,time:1000});
+				}
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+		}
+		layer.closeAll('dialog');  // 关闭弹窗
+	})
+}
+
+// 批量删除
+function batchDelete(e) {
+	let id = document.getElementById('id').value;  // id
+	var arr = [];
+	for (let n = 0; n < document.querySelectorAll('#checkbox').length; n++) {
+		if(document.querySelectorAll('#checkbox')[n].checked == true) {
+			let id = document.querySelectorAll('#checkbox')[n].dataset.id;
+			arr.push(id);
+		}
+	}
+	if( arr.length == 0 ) {
+		layer.msg('没有勾选指定删除栏目!',{icon: 2,time:2000});
+	}else {
+		var arrx = arr;  // 作用域
+		layer.confirm(' 确认要删除吗？ ',function() {
+		layer.closeAll('dialog');  // 关闭弹
+		// console.log(arr);
+		axios.post('/admin/batchDelete',{ arrx,id })
+		.then((res)=> {
+			console.log(res.data);
+			if (res.data.code == '002') {
+				layer.msg(res.data.msg,{icon:2,time:1000});
+				setTimeout(() => {
+					window.location.replace(location.href);
+				}, 1000);
+			}else if(res.data.code == '001') {
+				let resData = template("template",res.data);
+				var content = document.getElementById("content");
+				content.innerHTML = resData;
+				layer.msg(res.data.msg,{icon:1,time:1000});
+			}
+		})
+		.catch((err)=>{
+			console.log(err);
+		})
+	})
+	}
+	arr = [];
+}
+</script>
+{{ /block }}

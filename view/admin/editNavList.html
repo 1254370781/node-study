@@ -1,0 +1,158 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<article class="page-container">
+    <form class="form form-horizontal" action="" method="post" id="submit">
+        <input type="hidden" value="{{ data.id }}" class="input-text" id="id" name="uid">
+        <input type="hidden" value="{{ data.uid }}" class="input-text" id="uid" name="uid">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章标题：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="{{ data.title }}" placeholder="" id="title" name="title">
+            </div>
+        </div> 
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">图片：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="hidden" id="hiddenImg" name="hiddenImg" value="{{ data.img }}" >  <!-- 存储原本banner图片路径 -->
+                <input type="file" name="picFile" id="picFile" /><br/>
+                <div id="previewBox" class="{{ if data.img }} bannerPreview {{ /if }}">
+                    <img {{ if data.img }}src="{{__HOST__}}/{{ data.img }}"{{ /if }} id="images" />
+                </div>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">排序值：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="{{ data.sort }}" placeholder="" id="sort" name="sort">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>是否发布：</label>
+            <div class="formControls col-xs-8 col-sm-9"><span class="select-box">
+                <select name="release" id="release" class="select">
+                    <option {{if data.fabu == '是'}}selected="selected"{{/if}} value="0">是</option>
+                    <option {{if data.fabu == '否'}}selected="selected"{{/if}} value="1">否</option>
+                </select>
+                </span>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">文章摘要：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <textarea name="jianjie" id="jianjie" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" >{{ data.jianjie }}</textarea>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">文章内容：</label>
+            <div class="formControls col-xs-8 col-sm-9"> 
+                <script id="editor" type="text/plain" style="width:100%;height:400px;"></script>
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <button class="btn btn-primary radius"> <i class="Hui-iconfont">&#xe632;</i> 修改</button>
+                <button class="btn btn-default radius" type="reset" id="reset">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+            </div>
+        </div>
+    </form>
+</article>
+{{ /block }}
+
+{{ block 'footerContent' }}
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script> 
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>   
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/webuploader/0.1.5/webuploader.min.js"></script> 
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/ueditor/1.4.3/ueditor.config.js"></script> 
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script> 
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script>
+    // 图片上传
+    function getFile(fileId,previewBox,picSrc) {
+        document.querySelector(fileId).onchange = function(){
+            //判断是否支持FileReader
+            if (window.FileReader) {
+                var reader = new FileReader();
+            } else {
+                alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+            }
+            //获取文件
+            var file = this.files[0];
+            var imageType = /^image\//;
+            //是否是图片
+            if (!imageType.test(file.type)) {
+                alert("请选择图片！");
+                return;
+            }
+            //读取完成
+            reader.onload = function(e) {
+                document.querySelector(previewBox).classList.add('bannerPreview');
+                //获取图片dom
+                var img = document.getElementById(picSrc);
+                //图片路径设置为读取的图片
+                img.src = e.target.result;
+                // console.log(e.target.result);
+                // console.log(reader.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+    getFile('#picFile','#previewBox','images');
+
+    // 富文本
+    var ue = UE.getEditor('editor');
+    ue.addListener("ready", function () {   // 给富文本框赋值
+        // editor准备好之后才可以使用  
+        ue.setContent(`{{@data.content}}`);
+    });
+
+    // 提交内容
+    getQue = ele=> document.querySelector(ele).value;
+    document.querySelector('#submit').addEventListener('submit',function(e){
+        // 阻止默认事件
+        e.preventDefault();
+        var formData = new FormData();
+        formData.append('id',getQue('#id')); // id
+        formData.append('title',getQue('#title')); // 标题
+        // 判断  如果上传为空  并且隐藏的不为空   则选择隐藏的
+        if (document.querySelector('#picFile').files[0] == undefined && document.querySelector('#hiddenImg').defaultValue != '') {
+            formData.append('img',document.querySelector('#hiddenImg').defaultValue);   // 图片
+        }else {
+            formData.append('img',document.querySelector('#picFile').files[0]);   // 图片
+        }
+        formData.append('sort',getQue('#sort'));  // 排序值
+        formData.append('fabu',document.querySelector('#release').options[document.querySelector('#release').selectedIndex].text);  // 模板文件类型
+        formData.append('jianjie', getQue('#jianjie'));  // 简介 文章简要
+        formData.append('content',ue.getContent());  // 富文本内容
+        formData.append('uid',getQue('#uid')); // uid
+        
+        // 返回地址
+        let uid = getQue('#uid');
+        let url = `/admin/navList?id=${uid}`;
+        if (getQue('#title') != '') {
+            axios.post('/admin/doEditNavList', formData)
+            .then(function (response) {
+                console.log(response.data);
+                alert(response.data.msg);
+                window.location.replace(url);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }else {
+            alert(' 标题不能为空!');
+        }
+    },false)
+
+    // 取消 返回上一页
+    document.querySelector('#reset').onclick = function() {
+        let uid = getQue('#uid');
+        let url = `/admin/navList?id=${uid}`;
+        window.location.replace(url);
+        // window.history.back();
+    }
+</script>
+{{ /block }}

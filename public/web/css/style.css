@@ -1,0 +1,760 @@
+@charset "utf-8";
+/*!
+ * @style.css
+ * @功能：1、页面基本样式
+ *       2、时间：
+ */
+
+ /*头部*/
+.to-h {
+    padding: 32px 0 45px;
+}
+.to-f {
+    border-top: 1px solid #dddddc;
+    border-bottom: 1px solid #dddddc;
+}
+.nav-a {
+    /* width: 154px; */
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    display: inline-block;
+    color: #4b2c27;
+    margin: 0 43px;
+    box-sizing: border-box;
+    border-bottom: 2px solid transparent;
+}
+.nav-act {
+    border-bottom-color: #bb917c;
+}
+/* 联系我们 */
+.co-bg {
+    height: 1012px;
+    background: url(../images/contact_bg.jpg) no-repeat center center;
+    margin-top: 57px;
+}
+.co-l {
+    width: 531px;
+}
+.co-r {
+    width: 707px;
+}
+.co-p1{
+    font-size: 22px;
+    color: #848484;
+    margin: 160px 0 25px;
+}
+.co-p2{
+    font-size: 16px;
+    color: #848484;
+    line-height: 26px;
+}
+.co-p3{
+    margin-bottom: 10px;
+}
+.co-p4{
+    margin-top: 30px;
+}
+.co-a {
+    margin-left: 5px;
+}
+.co-lx {
+    box-sizing: border-box;
+    padding-left: 123px;
+    margin-top: 48px;
+}
+.co-lxl {
+    width: 178px;
+}
+.co-lxp {
+    margin-top: 17px;
+    font-size: 16px;
+    color: #848484;
+}
+.co-lxr {
+    width: 400px;
+    box-sizing: border-box;
+    padding-left: 30px;
+    font-size: 16px;
+    color: #848484;
+    line-height: 30px;
+}
+
+
+/* 企业信息页面 */
+.en-mt {
+    margin-top: 80px;
+}
+.en-tl {
+    width: 741px;
+}
+.en-tltxt {
+    display: inline-block;
+    width: 675px;
+    margin-left: 20px;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #6a3a32;
+    line-height: 24px;
+}
+.en-tltxt p {
+    margin-bottom: 48px;
+    text-align: justify;
+}
+.en-tr {
+    width: 497px;
+}
+.en-m {
+    height: 780px;
+    margin: 60px 0 100px;
+    background: url(../images/enterprise_bg1.jpg) no-repeat center center;
+}
+.en-md1 {
+    position: absolute;
+    left: 0;
+    bottom: 101px;
+    z-index: 9;
+}
+.en-mc {
+    display: inline-block;
+    width: 680px;
+    height: 680px;
+    position: absolute;
+    left: 462px;
+    top: 0;
+    z-index: 5;
+    background-color: #dca157;
+    box-sizing: border-box;
+    padding: 90px 0 0 75px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 36px;
+}
+.en-mctit {
+    font-size: 18px;
+}
+.en-md2 {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+    background-color: #5a5030;
+    font-size: 20px;
+    color: #fff;
+    position: absolute;
+    top: 196px;
+    right: 47px;
+    z-index: 8;
+    letter-spacing: 2px;
+}
+.en-g {
+    margin-bottom: 30px;
+}
+.en-gi {
+    margin-right: 22px;
+}
+.en-gd {
+    width: 510px;
+}
+.en-gdtxt {
+    font-size: 14px;
+    color: #5a5030;
+    line-height: 36px;
+    text-align: justify;
+    margin-top: 15px;
+}
+.en-gb {
+    width: 706px;
+    height: 337px;
+    display: inline-block;
+    background: url(../images/enterprise07.jpg) no-repeat center center;
+    font-size: 14px;
+    color: #fff;
+    line-height: 30px;
+    box-sizing: border-box;
+    padding: 0 22px;
+    text-align: justify;
+}
+.en-gbtit {
+    margin-top: 47px;
+}
+.en-gc {
+    display: inline-block;
+    width: 510px;
+    height: 337px;
+    line-height: 337px;
+    text-align: center;
+    background: url(../images/enterprise08.jpg) no-repeat center center;
+    font-size: 36px;
+    color: #fff;
+}
+.en-o {
+    margin-top: 40px;
+}
+.en-ol {
+    display: inline-block;
+    width: 706px;
+    height: 869px;
+    background: url(../images/enterprise_bg.jpg) no-repeat center center;
+}
+.en-old {
+    position: absolute;
+    right: 0;
+    bottom: 140px;
+}
+.en-or {
+    display: inline-block;
+    width: 422px;
+    margin-left: 60px;
+}
+.en-ork {
+    padding: 45px 0;
+    font-size: 14px;
+    color: #5a5030;
+    line-height: 30px;
+    text-align: justify;
+}
+.en-ork-sp {
+    font-size: 18px;
+    margin: 0 0 20px 25px;
+    display: inline-block;
+}
+.en-p {
+    height: 256px;
+    margin: -90px 0 60px;
+    z-index: 9;
+}
+.en-ptxt {
+    display: inline-block;
+    width: 470px;
+    font-size: 14px;
+    line-height: 30px;
+    color: #5a5030;
+    text-align: justify;
+    position: absolute;
+    left: 135px;
+    bottom: 0;
+}
+.en-pk {
+    display: inline-block;
+    width: 60px;
+    height: 188px;
+    background-color: #dca157;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.en-ping {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/* LOUISE ODIER页面 */
+.lo-t {
+    margin: 80px 0 160px;
+}
+
+/* 底部 */
+.fo {
+    padding: 35px 0;
+    border-top: 1px solid #e6e6e6;
+}
+.lo-a {
+    height: 367px;
+    background-color: #e0ded8;
+    margin-bottom: 80px;
+}
+.lo-ai {
+    position: absolute;
+    bottom: 45px;
+    left: 42px;
+}
+.lo-atxt {
+    display: inline-block;
+    width: 530px;
+    position: absolute;
+    right: 50px;
+    bottom: 58px;
+    text-align: justify;
+    font-size: 14px;
+    color: #5a5030;
+    line-height: 32px;
+}
+.lo-ap {
+    font-size: 52px;
+    color: #5a5030;
+    margin-bottom: 90px;
+    text-align: center;
+}
+.lo-b {
+    margin-bottom: 100px;
+}
+.lo-bg {
+    display: inline-block;
+    width: 408px;
+    height: 710px;
+    margin-right: 4px;
+    box-sizing: border-box;
+    border: 1px solid #a6937c;
+    transition: all .5s;
+    cursor: pointer;
+}
+.lo-bg:nth-child {
+    margin-right: 0;
+}
+.lo-bg:hover {
+    border-width: 5px;
+}
+.lo-bgi {
+    display: inline-block;
+    width: 390px;
+    height: 586px;
+    position: absolute;
+    /* top: 30px; */
+    /* margin: 0 auto; */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.lo-c {
+    height: 857px;
+    margin-bottom: 100px;
+}
+.lo-ci1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9;
+}
+.lo-ci2 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9;
+}
+.lo-ctxt {
+    display: inline-block;
+    width: 257px;
+    height: 64px;
+    border: 2px solid #fff;
+    line-height: 64px;
+    text-align: center;
+    font-size: 31px;
+    color: #fff;
+    font-family: 'Georgia';
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.lo-ci3 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 146px;
+    z-index: 10;
+    margin: 0 auto;
+}
+.lo-cbg {
+    display: inline-block;
+    width: 236px;
+    height: 606px;
+    background-color: #2f0f12;
+    position: absolute;
+    top: 53px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 5;
+}
+.lo-d {
+    margin-bottom: 6px;
+    background: url(../images/LOUISE_bg.jpg) no-repeat 690px 52px;
+}
+.lo-dl {
+    display: inline-block;
+    width: 745px;
+}
+.lo-dr {
+    display: inline-block;
+    width: 445px;
+}
+.lo-drmb {
+    margin-bottom: 45px;
+}
+.lo-e {
+    background-color: #977a55;
+    margin-bottom: 100px;
+    height: 812px;
+}
+.lo-ed {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0 auto;
+}
+.lo-f {
+    margin-bottom: 35px;
+}
+.lo-fl {
+    display: inline-block;
+    width: 681px;
+}
+.lo-fr {
+    display: inline-block;
+    width: 532px;
+}
+.fl-g {
+    margin-bottom: 60px;
+}
+
+
+/* Riina Clare页面 */
+.ri-t {
+    margin: 78px 0;
+}
+.ri-a {
+    margin-bottom: 60px;
+}
+.ri-al {
+    display: inline-block;
+    width: 560px;
+    box-sizing: border-box;
+    padding-left: 64px;
+    font-size: 22px;
+    color: #55332b;
+    line-height: 36px;
+}
+.ri-alsp {
+    font-size: 38PX;
+    color: #55332b;
+}
+.ri-ali {
+    margin: 7px 0 0 15px;
+}
+.ri-alt {
+    margin-bottom: 25px;
+}
+.ri-ar {
+    display: inline-block;
+    width: 675px;
+    height: 252px;
+    border: 1px solid #7d0000;
+    box-sizing: border-box;
+    padding-left: 24px;
+}
+.ri-ar > div {
+    font-size: 20px;
+    color: #55332b;
+    margin: 7px 0px;
+}
+.ri-arsp {
+    font-size: 36px;
+    margin-right: 20px;
+}
+.ri-arsp1 {
+    line-height: 47px;
+}
+.ri-bm {
+    margin: 28px 0 100px;
+}
+.ri-d {
+    margin: 100px 0 60px;
+    height: 1047px;
+}
+.ri-dl {
+    width: 612px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9;
+}
+.ri-dimg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+}
+.ri-dbg {
+    display: inline-block;
+    width: 570px;
+    height: 1047px;
+    background-color: #cf9faf;
+    position: absolute;
+    left: 302px;
+    top: 0;
+    z-index: 5;
+}
+.ri-dname {
+    font-size: 50px;
+    color: #fff;
+    position: absolute;
+    top: 433px;
+    left: 194px;
+    z-index: 10;
+}
+
+/* V I C F I N  E页面 */
+.vi-t {
+    margin: 80px 0 5px;
+}
+.vi-a {
+    margin-bottom: 21px;
+}
+.vi-al {
+    display: inline-block;
+    width: 376px;
+    height: 711px;
+}
+.vi-ar {
+    display: inline-block;
+    width: 825px; 
+    font-size: 18px;
+    color: #55332b;
+    line-height: 36px;
+    height: 711px;
+    position: relative;
+}
+.vi-ar > p{
+    margin-bottom: 30px;
+}
+.vi-ar > p:first-child{
+    margin-top: 20px;
+}
+.vi-arb-tit {
+    font-size: 32px;
+    color: #55332b;
+}
+.vi-arb {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.vi-arbb {
+    height: 282px;
+    background: url(../images/vicfine_bg.jpg) no-repeat right top;
+    margin-top: 7px;
+    box-sizing: border-box;
+    padding-left: 30px;
+}
+.vi-arbb > div:first-child {
+    margin-top: 22px;
+}
+.vi-arbb > div {
+    margin-bottom: 30px;
+    font-family: '宋体';
+}
+.vi-arbbsp {
+    font-size: 28px;
+    color: #55332b;
+}
+.vi-arbbsp1 {
+    font-size: 20px;
+    color: #55332b;
+    margin-left: 20px;
+}
+.vi-b {
+    margin-bottom: 100px;
+}
+.vi-bb {
+    margin-bottom: 10px;
+}
+.vi-c {
+    margin-bottom: 3px;
+    display: inline-block;
+    height: 1051px;
+}
+.vi-cd1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+}
+.vi-cd2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+}
+.vi-cd3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+.vi-d {
+    display: inline-block;
+    height: 1489px;
+    margin-bottom: 60px;
+}
+.vi-dd1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+}
+.vi-dd2 {
+    position: absolute;
+    top: 164px;
+    right: 0;
+    z-index: 5;
+}
+.vi-dd3 {
+    position: absolute;
+    top: -60px;
+    right: 0;
+    z-index: 5;
+}
+.vi-dbg {
+    display: inline-block;
+    width: 452px;
+    height: 165px;
+    background-color: #deb273;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+}
+
+
+/* 招商加盟页面 */
+.jo-t {
+    margin: 60px 0;
+    font-size: 16px;
+    color: #55332b;
+    line-height: 28px;
+}
+.jo-ttit {
+    font-size: 26px;
+    margin-bottom: 40px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* 新闻动态 */
+.ne-ge {
+    display: inline-block;
+    width: 384px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-right: 43px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+.ne-ge:nth-child(3n+0) {
+    margin-right: 0;
+}
+.ne-geimg {
+    height: 289px;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+.ne-geho {
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.ne-geimg:hover .ne-geho {
+    -webkit-transform:scale(1.1);
+    -moz-transform:scale(1.1);
+    -o-transform:scale(1.1);
+    transform:scale(1.1);
+}
+.ne-gep {
+    font-size: 16px;
+    margin-top: 10px;
+}
+.w-at1 {
+    width: 938px;
+	margin: 0 auto;
+}
+.ne-dt {
+    margin: 60px 0 50px;
+}
+.ne-dth2 {
+    font-size: 20px;
+    color: #666;
+    padding: 15px 33px;
+    margin: 0;
+    font-weight: normal;
+}
+.ne-dtp {
+    font-size: 14px;
+    color: #999;
+}
+.ne-dc {
+    color: #999;
+    line-height: 24px;
+    font-size: 14px;
+}
+.ne-dc img {
+    max-width: 100%;
+    height: auto;
+}
+.pr-next {
+    margin: 30px 0 60px;
+}
+.pr-nexts {
+    margin: 5px 0;
+}
+
+/* 会员天地页面 */
+.vi-ge {
+    display: inline-block;
+    width: 278px;
+    cursor: pointer;
+    margin-right: 42px;
+    margin-bottom: 25px;
+}
+.vi-ge:nth-child(4n+0) {
+    margin-right: 0;
+}
+.vi-geimg {
+    height: 155px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+
+/* 分页 */
+.pagel {
+    display: inline-block;
+    padding: 5px 20px;
+    border: 1px solid #ccc;
+    margin: 0 10px;
+}
+.pagel:hover,
+.pagelDetail {
+    background-color: seagreen;
+    color: #fff;
+}
+.pageDisable:hover,
+.pageDisable {
+    background-color: #eee;
+    color: #ccc;
+}
+.detailx {
+    padding: 25px 0 50px;
+    margin-top: 25px;
+    border-top: 1px solid #eee;
+}
+.detailx2 {
+    display: inline-block;
+    width: 45%;
+    font-size: 16px;
+    color: #999;
+}
+.detailx2:last-child {
+    text-align: right;
+}

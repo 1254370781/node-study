@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  <!-- IE兼容模式 -->
+    {{ include '../common/linker.html' }}
+</head>
+<body>
+    <!--引入头部-->
+    {{include '../common/header.html'}}
+    <!--中间留坑-->
+    <main>
+        <article class="ma-mt-100">
+            {{block 'content'}}{{/block}}
+        </article>
+    </main>
+    <!--引入底部-->
+    {{include '../common/footer.html'}}
+</body>
+</html>

@@ -1,0 +1,161 @@
+@charset "utf-8";
+html {
+    color:#222;
+	font: 18px '微软雅黑';
+	background: #222；
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    margin:0;
+    padding:0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none!important;
+	color: #232323;
+	/*outline: none!important;*/
+}
+a:link{
+text-decoration:none!important;
+}
+a:visited{
+text-decoration:none!important;
+}
+a:hover{
+text-decoration:none!important;
+}
+a:active{
+text-decoration:none!important;
+}
+a:focus {
+  text-decoration: none!important;
+}
+.hide {
+    display:none;
+}
+.block {
+    display:block;
+}
+.fl {
+    float:left;
+}
+.fr {
+    float:right;
+}
+.t-c{
+	text-align: center;
+}
+.d-block{
+	display: block;
+}
+.d-i-block{
+	display: inline-block;
+}
+/*居中*/
+.tx-ct{  
+    text-align: center;
+}
+/*清除浮动*/
+.clear{*zoom:1}
+.clear:after{content:'';display:block;height:0;clear:both}
+
+.w-100{
+	width: 100%;
+}
+.h-100{
+	height: 100%;
+}
+.w-at{
+	width: 1238px;
+	margin: 0 auto;
+}
+/*@media screen and (max-width: 1440px) {
+	.w-at{
+		width: 88.6%;
+	}
+}
+@media screen and (min-width: 1920px) {
+	.w-at{
+		width: 1510px;
+	}
+}*/
+.l-h{
+	line-height: 100%;
+}
+.ov-h{
+	overflow: hidden;
+}
+.ps-re{
+	position: relative;
+}
+.ps-ab{
+	position: absolute;
+}
+.cu-p{
+	cursor: pointer;
+}
+.wht{
+	color: white;
+}
+.b-whi{
+	background-color: white;
+}
+.d-hi{
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.s-hi{
+	display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre-line;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.s-hi3{
+	-webkit-line-clamp: 4;
+}
+/*img-fluid*/
+.img-fiuld{
+	max-width: 100%;
+	height: auto;
+}
+.img-fiulds{
+	max-height: 100%;
+	width: auto;
+}
+.img-center{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+}
+
+.site__title {
+	color: #f35626;
+	background-image: linear-gradient(92deg, #f35626 0%,#feab3a 100%);
+	-webkit-background-clip: text;
+			background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: hue 60s infinite linear;
+	/* font-size: 6rem; */
+    /* line-height: 1; */
+}
+@keyframes hue {
+	from {
+	  filter: hue-rotate(0deg);
+	}
+  
+	to {
+	  filter: hue-rotate(-360deg);
+	}
+}

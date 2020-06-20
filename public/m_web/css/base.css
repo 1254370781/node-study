@@ -1,0 +1,186 @@
+@charset "utf-8";
+/*!
+ * @base.css
+ * @功能：1、页面基本公用样式
+ *       2、时间：2019-06-03
+ */
+html {
+    color:#222;
+    font: 16px '微软雅黑';
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    margin:0;
+    padding:0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none!important;
+	outline: none!important;
+}
+a:link{
+text-decoration:none!important;
+}
+a:visited{
+text-decoration:none!important;
+}
+a:hover{
+text-decoration:none!important;
+}
+a:active{
+text-decoration:none!important;
+}
+a:focus {
+  text-decoration: none!important;
+}
+.hide {
+    display:none;
+}
+.block {
+    display:block;
+}
+.fl {
+    float:left;
+}
+.fr {
+    float:right;
+}
+.t-c{
+	text-align: center;
+}
+.d-block{
+	display: block;
+}
+.d-i-block{
+	display: inline-block;
+}
+/*居中*/
+.tx-ct{  
+    text-align: center;
+}
+/*清除浮动*/
+.clear{*zoom:1}
+.clear:after{content:'';display:block;height:0;clear:both}
+
+.w-100{
+	width: 100%;
+}
+.h-100{
+	height: 100%;
+}
+.w-at{
+	width: 1200px;
+	margin: 0 auto;
+}
+/*@media screen and (max-width: 1440px) {
+	.w-at{
+		width: 88.6%;
+	}
+}
+@media screen and (min-width: 1920px) {
+	.w-at{
+		width: 1510px;
+	}
+}*/
+.l-h{
+	line-height: 100%;
+}
+.ov-h{
+	overflow: hidden;
+}
+.vi-si {
+    visibility: hidden;
+}
+.ps-re{
+	position: relative;
+}
+.ps-ab{
+	position: absolute;
+}
+.cu-p{
+	cursor: pointer;
+}
+.wht{
+	color: white;
+}
+.b-whi{
+	background-color: white;
+}
+.d-hi{
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.s-hi{
+	display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre-line;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.s-hi-3{
+	-webkit-line-clamp: 3;
+}
+.s-hi-5{
+	-webkit-line-clamp: 5;
+}
+.sc-hua{
+	overflow: scroll;
+	white-space: nowrap;
+}
+.img-fiuld{
+	max-width: 100%;
+	height: auto;
+}
+.img-fiulds{
+	max-height: 100%;
+	width: auto;
+}
+.img-center{
+	max-width: 100%;
+	height: auto;
+	max-height: 100%;
+	width: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+
+/* 分页 */
+#pageContent {
+	padding-bottom: 20px;
+}
+.pagel {
+    display: inline-block;
+	padding: 2px 15px;
+	border: 1px solid #ccc;
+	margin: 0 5px;
+	font-size: 14px;
+	color: #666;
+}
+.pagel:hover,
+.pagelDetail {
+    background-color: seagreen;
+    color: #fff;
+}
+.pageDisable:hover,
+.pageDisable {
+    background-color: #eee;
+    color: #ccc;
+}
+.detailx {
+   margin: 20px 0;
+}
+.detailx2 {
+    font-size: 16px;
+    color: #999;
+}
+.detailx2:last-child {
+    text-align: right;
+}

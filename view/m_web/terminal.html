@@ -1,0 +1,21 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<section class="container">
+    <div class="row">
+        <div class="w-100 d-flex flex-wrap">
+            <div class="col-12 pt-4 pb-3 d-flex flex-wrap justify-content-center">
+                <h2 class="joZstit">{{ title }}</h2>
+            </div>
+            <div class="col-12 d-flex flex-wrap pt-2 pb-2">
+                {{ each dataList }}
+                <div class="w-100 d-flex flex-column align-items-center mb-3">
+                    <img class="img-fiuld" src="{{ __HOST__ }}/{{ $value.img }}" alt="{{ $value.title }}">
+                    <p class="teGetit mt-3">{{ $value.title }}</p>
+                </div>
+                {{ /each }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ /block }}

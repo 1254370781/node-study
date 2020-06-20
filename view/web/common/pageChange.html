@@ -1,0 +1,55 @@
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+<script type="text/javascript" src="{{__HOST__}}/admin/js/template-web.js"></script>
+<!-- 模板-分页 -->
+<script type="text/html" id="pagetemplate">
+    <span style="display: none;" id="hiddenPage" data-id="<%= id %>" data-pagelength="<%= pagelength %>" data-pagestart="<%= pagestart %>" data-pagenum="<%= pagenum %>"></span>
+    <ul class="d-i-block">
+        <li class="fl"><a onclick="nextPage(this,'上一页')" class="pagel weiwei <% if (pagestart == 0) { %> pageDisable <% } %>" href="javascript:;">上一页</a></li>
+        <% for(var i = 0; i < pagelength; i++){ %>
+        <li class="fl"><a class="pagel <% if (i == pagestart) { %> pagelDetail <% } %> " onclick="nextPage(this)" data-pageid="<%= i %>" href="javascript:;"><%= i+1 %></a></li>
+        <% } %>
+        <li class="fl"><a onclick="nextPage(this,'下一页')" class="pagel weiwei <% if (pagestart +1 == pagelength) { %> pageDisable <% } %>" href="javascript:;">下一页</a></li>
+    </ul>
+</script>
+<script>
+    // 上、下一页
+    function nextPage(e,title) {
+        // console.log(e,title);
+        // 判断：如果有pageDisable 则证明没有上、下一页
+        if (e.classList.contains('pageDisable')) {
+            return false;
+        }
+        // 获取传过来的title  判断是上一页还是下一页
+        let titles = title;
+        if (titles == undefined) {
+            titles = e.dataset.pageid;
+        }
+        console.log(titles)
+        // id 根据id查询uid的列表
+        let id = document.querySelector('#hiddenPage').dataset.id;
+        // 共有多少页
+        let pagelength = document.querySelector('#hiddenPage').dataset.pagelength;
+        // 处于第几页
+        let pagestart = document.querySelector('#hiddenPage').dataset.pagestart;
+        // 每页多少条信息
+        let pagenum = document.querySelector('#hiddenPage').dataset.pagenum;
+        // console.log(id,pagestart,pagenum);
+        axios.post('/getPages', {titles, id, pagelength, pagestart, pagenum})
+        .then(function (response) {
+            if (response.data.code == '001') {
+                // console.log(response.data);
+                // 内容列表
+                let resData = template("template",response.data);
+				var content = document.getElementById("content");
+                content.innerHTML = resData;
+                // 分页
+                let pageData = template("pagetemplate",response.data);
+				var pageContent = document.getElementById("pageContent");
+				pageContent.innerHTML = pageData;
+            }
+        })
+        .catch(function (error) {
+            console.log(error);  
+        });
+    }
+</script>

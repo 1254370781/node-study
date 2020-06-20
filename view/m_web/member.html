@@ -1,0 +1,46 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<section class="container">
+    <div class="row">
+        <div class="w-100 d-flex flex-wrap">
+            <div class="col-12 pt-4 pb-4 d-flex flex-wrap justify-content-center">
+                <h2 class="joZstit">{{ title }}</h2>
+            </div>
+            <div class="col-12 d-flex flex-wrap pb-3" id="content">
+                {{ each datalist }}
+                <a href="/detail?id={{ $value.id }}" class="neGe d-flex flex-column mb-3">
+                    <div class="w-100 d-flex flex-wrap vipGeimg align-items-center justify-content-center">
+                        <img class="img-fiuld img-fiulds" src="{{ $value.img }}" alt="{{ $value.title }}">
+                    </div>
+                    <p class="neGeTit d-hi mt-2">{{ $value.title }}</p>
+                </a>
+                {{ /each }}
+            </div>
+            <div class="tx-ct w-100 fl" id="pageContent">
+                <!-- data-id  是查询uid内容列表   其他的三个data-  主要是分页 -->
+                <span style="display: none;" id="hiddenPage" data-id="{{data.id}}" data-pagelength="{{pagelength.length}}" data-pagestart="{{pagestart}}" data-pagenum="{{ pagenum }}"></span>
+                <ul class="d-i-block">
+                    <li class="fl"><a onclick="nextPage(this,'上一页')" class="pagel {{ if pagestart == 0 }} pageDisable {{/if}}" href="javascript:;">上一页</a></li>
+                    {{ each pagelength }}
+                    <li class="fl"><a class="pagel {{ if $index == pagestart }} pagelDetail {{/if}} " onclick="nextPage(this)" data-pageid="{{$index}}" href="javascript:;">{{ $index +1 }}</a></li>
+                    {{ /each }}
+                    <li class="fl"><a onclick="nextPage(this,'下一页')" class="pagel {{ if pagelength.length == pagestart +1 }} pageDisable {{/if}}" href="javascript:;">下一页</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 模板--列表 -->
+<script type="text/html" id="template">
+    <% for(var i = 0; i < data.length; i++){ %>
+        <a href="/detail?id=<%=data[i].id%>" class="neGe d-flex flex-column mb-3">
+            <div class="w-100 d-flex flex-wrap vipGeimg align-items-center justify-content-center">
+                <img class="img-fiuld img-fiulds" src="<%=data[i].img%>" alt="<%=data[i].title%>">
+            </div>
+            <p class="neGeTit d-hi mt-2"><%=data[i].title%></p>
+        </a>
+    <% } %>
+</script>
+{{include './common/pageChange.html'}}
+{{ /block }}

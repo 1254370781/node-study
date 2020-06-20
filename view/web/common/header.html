@@ -1,0 +1,27 @@
+<header class="w-100 fl">
+    <div class="w-100 fl tx-ct to-h">
+        <a href="/"><img src="{{ __site__.logo }}" alt="{{ __site__.title }}"></a>
+    </div>
+    <!-- {{__titleUrl__}} -->
+    <div class="w-100 fl to-f">
+        <div class="w-at">
+            <nav class="w-100 fl nav">
+                <ul>
+                    {{ each __navcolumn__ }}
+                    <li class="fl"><a class="nav-a {{if __URL__ == '/' + $value.template || __URL__ == '/' && $value.template == 'index' || /^\/brand/.test('/' + $value.template) && /^\/brand/.test(__URL__) }} nav-act {{/if}}" href=" {{if $value.template == 'index'}} / {{else}} /{{$value.template}} {{/if}} ">{{ $value.title }}</a></li>
+                    {{ /each }}
+                    <!-- <li class="fl"><a class="nav-a {{if __URL__ == '/'}} nav-act {{/if}}" href="/">首页</a></li>
+                    <li class="fl"><a class="nav-a {{if __URL__ == '/joinIn'}} nav-act {{/if}}" href="/joinIn">招商加盟</a></li>
+                    <li class="fl"><a class="nav-a {{if __URL__ == '/terminal'}} nav-act {{/if}}" href="/terminal">终端体验</a></li>
+                    <li class="fl"><a class="nav-a {{if /^\/brand/.test(__URL__) }} nav-act {{/if}}" href="/brand">品牌介绍</a></li>
+                    <li class="fl"><a class="nav-a {{if __URL__ == '/news'}} nav-act {{/if}}" href="/news">新闻动态</a></li>
+                    <li class="fl"><a class="nav-a {{if __URL__ == '/member'}} nav-act {{/if}}" href="/member">会员天地</a></li>
+                    <li class="fl"><a class="nav-a {{if __URL__ == '/information'}} nav-act {{/if}}" href="/information">企业信息</a></li>
+                    <li class="fl"><a class="nav-a {{if __URL__ == '/contact'}} nav-act {{/if}}" href="/contact">联系我们</a></li> -->
+                    <!-- 正则判断是不是以/brand开头的url -->
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="clear"></div>

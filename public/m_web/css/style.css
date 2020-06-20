@@ -1,0 +1,260 @@
+@charset "utf-8";
+/*!
+ * @base.css
+ * @功能：1、页面主要样式
+ *       2、时间：2019-06-03
+ */
+
+ /*顶部*/
+  .hd-fi{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(187, 145, 124, .3);
+ }
+ .logo-img{
+    width: 45px;
+    height: auto;
+ }
+ .na-bt{
+    border: none!important;
+    outline: none!important;
+    background-color: #fff;
+    position: relative;
+ }
+ .na-ic-bar{
+    width: 38px;
+    height: 3px;
+    margin: 4px 0;
+    background-color: #bb917c;
+ }
+ .nav-share{
+    position: fixed;
+    left: 0;
+    top: 59.05px;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 77;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+ }
+ .hd-bg{
+    position: fixed;
+    width: 0;
+    left: 0;
+    top: 59.05px;
+    bottom: 0;
+    background-color: #bb917c;
+    z-index: 88;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    overflow: hidden;
+ }
+ .hd-na-li{
+    padding: 12px 10px;
+    border-bottom: 1px solid #fff;
+ }
+ .hd-na-a{
+    font-size: 15px;
+    color: white;
+    display: block;
+ }
+ .in-cr-he-le{
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+ }
+.in-cr-he-ri{
+    transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+/*首页*/
+.ma-mt-100{
+    margin-top: 59.05px;
+}
+
+/* 招商加盟 */
+.joZstit {
+   font-size: 22px;
+   color: #55332b;
+}
+.joZscon {
+   font-size: 15px;
+   color: #55332b;
+   line-height: 28px;
+   text-align: justify;
+}
+
+/* 终端体验 */
+.teGetit {
+   font-size: 15px;
+   color: #55332b;
+}
+
+/* 品牌介绍 */
+.brfTit {
+   font-size: 15px;
+   color: #000;
+}
+.brTit {
+   font-size: 20px;
+   color: #000;
+   font-family: "avantgarde_bk_btdemi";
+}
+.loTit {
+   font-size: 26px;
+   color: #5a5030;
+   font-weight: bold;
+   text-align: center;
+   display: block;
+   width: 100%;
+   margin-bottom: 10px;
+   letter-spacing: 2px;
+}
+.viCon p {
+   margin-bottom: 12px;
+}
+.viConone {
+   background-color: #e6e5e6;
+   font-size: 13px;
+   color: #55332b;
+}
+.viCononeSp {
+   font-size: 20px;
+}
+.riStrat {
+   font-size: 24PX;
+   color: #55332b;
+   display: block;
+   width: 100%;
+}
+.riCon {
+   box-sizing: border-box;
+   border: 1px solid #7d0000;
+   color: #55332b;
+   font-size: 16px;
+}
+
+
+/* 新闻动态 */
+.neGe {
+   width: 50%;
+   box-sizing: border-box;
+   padding-left: 0;
+   padding-right: 7px;
+}
+.neGe:nth-child(2n+0) {
+   padding-right: 0;
+   padding-left: 7px;
+}
+.neGeimg {
+   border: 1px solid #ddd;
+   height: 125px;
+}
+.vipGeimg {
+   border: 1px solid #ddd;
+   height: 95px;
+}
+.neGeTit {
+   font-size: 16px;
+   color: #55332b;
+   text-align: center;
+}
+.wzBor {
+   border-bottom: 1px solid #eee;
+}
+.prDetit {
+   font-size: 20px;
+   color: #55332b;
+   text-align: center;
+}
+.prDetime {
+   font-size: 14px;
+   color: #666;
+}
+.prDecon {
+   font-size: 16px;
+   color: #666;
+   line-height: 30px;
+   text-align: justify;
+}
+.prDecon img {
+   max-width: 100%;
+   height: auto;
+}
+
+/* 企业信息 */
+.abLn {
+   font-size: 20px;
+   color: #55332b;
+}
+
+/* 联系我们 */
+.coCon {
+   font-size: 15px;
+   color: #848484;
+   line-height: 30px;
+}
+.coTit {
+   font-size: 18px;
+   color: #55332b;
+}
+
+
+
+/*底部*/
+.f-m152{
+    margin-bottom: 74px;
+}
+.fl-bla {
+    background-color: #efefef;
+}
+.fl-bei {
+    display: block;
+    width: 100%;
+    /* height: 65px; */
+    background-color: #efefef;
+    /* line-height: 65px; */
+    text-align: center;
+    font-size: 14px;
+    color: #3b3b3b;
+    padding: 15px 0;
+}
+.bo-di-fi {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #bb917c;
+    z-index: 99;
+    border-top: 1px solid #fff;
+}
+.fool-img{
+    width: 32px;
+    height: auto;
+}
+.bo-di-fi-sp {
+    font-size: 16px;
+    color: white;
+}

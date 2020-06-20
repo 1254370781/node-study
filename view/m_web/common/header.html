@@ -1,0 +1,28 @@
+<header class="container hd-fi">
+    <div class="d-flex pt-2 pb-2 justify-content-between align-items-center">
+        <img class="logo-img img-fiuld" src="/m_web/images/logo1.jpg" alt="logo">
+        <button type="button" id="btn-nav" class="flex-column d-flex na-bt" >  
+         <span id="na-bu-sp1" class="na-ic-bar"></span>
+         <span id="na-bu-sp2" class="na-ic-bar"></span>
+         <span id="na-bu-sp3" class="na-ic-bar"></span>
+     </button>
+    </div>
+    <div class="row">
+        <div id="nav_share" style="width: 0px;" class="nav-share"></div>
+        <div id="navs" class="hd-bg" style="width: 0px;">
+            <nav class="w-100">
+                <ul>
+                    {{ each __navcolumn__ }}
+                    <li class="hd-na-li"><a class="hd-na-a" href=" {{if $value.template == 'index'}} / {{else}} /{{$value.template}} {{/if}} ">{{ $value.title }}</a></li>
+                    {{ /each }}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<script type="text/javascript">
+    function oId(id){return document.getElementById(id)};
+    oId('btn-nav').onclick = function(){
+        oId('nav_share').style.width == '0px'?(oId('navs').style.width = '75%',oId('nav_share').style.width = '100%',oId('na-bu-sp2').classList.add('vi-si'),oId('na-bu-sp1').classList.add('ps-ab','in-cr-he-le'),oId('na-bu-sp3').classList.add('ps-ab','in-cr-he-ri')):(oId('navs').style.width = '0px',oId('nav_share').style.width = '0px',oId('na-bu-sp2').classList.remove('vi-si'),oId('na-bu-sp1').classList.remove('ps-ab','in-cr-he-le'),oId('na-bu-sp3').classList.remove('ps-ab','in-cr-he-ri'));
+    }
+</script>

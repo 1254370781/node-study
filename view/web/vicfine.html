@@ -1,0 +1,57 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<main>
+    <section class="w-100 fl">
+        <div class="w-at">
+            <div class="w-100 fl vi-t">
+                <img class="img-fiuld fl" src="{{__HOST__}}/{{ data.banner }}" alt="{{ data.title }}">
+            </div>
+            <div class="w-100 fl vi-a">
+                <div class="vi-al fl">
+                    <img class="img-fiuld fl" src="{{__HOST__}}/web/images/vicfine02.jpg" alt="{{ data.title }}">
+                </div>
+                <div class="vi-ar fr">
+                    <div class="w-100 vi-ar">{{@data.content}}</div>
+                    <!-- <p>VICFINE作为香港知名服装设计师Kai旗下品牌之一，是一个集时尚与成熟于一身的轻奢品牌，以其源于
+                        东西方文化的灵感，设计风格鲜明，注重时尚与奢华，充满睿智与魅力。
+                        </p>
+                    <p>VICFINE将西式风情与东方气质融合，通过对时尚的解读与重塑，以其低调奢华的整体配色，风格沉稳
+                        而历久弥新，完美诠释都市精英生活细节中的优雅、淡定与自信。
+                        </p>
+                    <p>VICFINE产品包括男女时装系列以及皮具、配饰，针对追求品位的30岁以上的精锐人士，以其注重时尚
+                        感设计与高舒适度的体验，深受都市精英的亲魅。
+                        </p>
+                    <p>VICFINE自2009年进入中国，以其准确的市场定位及独特的风格，现已遍布全球10多个国家近200多家
+                        店铺，其时尚新贵的身份已经呼之欲出。</p> -->
+                    <div class="w-100 vi-arb">
+                        <span class="fr vi-arb-tit">ABOUT US</span>
+                        <div class="w-100 fl vi-arbb">
+                            <div class="w-100 fl"><span class="vi-arbbsp fl">01</span><span class="fl vi-arbbsp1">我们是一个集时尚与成熟优雅于一身的轻奢品牌</span></div>
+                            <div class="w-100 fl"><span class="vi-arbbsp fl">02</span><span class="fl vi-arbbsp1">源于东西方文化的灵感，风格鲜明，充满睿智与魅力</span></div>
+                            <div class="w-100 fl"><span class="vi-arbbsp fl">03</span><span class="fl vi-arbbsp1">西式风情与东方气质的融合完美诠释了优雅与自信</span></div>
+                            <div class="w-100 fl"><span class="vi-arbbsp fl">04</span><span class="fl vi-arbbsp1">深受都市精英及追求品味和时尚优雅的女士的青睐</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 fl vi-b">
+                <img class="img-fiuld fl vi-bb" src="{{__HOST__}}/web/images/vicfine03.jpg" alt="{{ data.title }}">
+                <img class="img-fiuld fl" src="{{__HOST__}}/web/images/vicfine04.jpg" alt="{{ data.title }}">
+                <img class="img-fiuld fr" src="{{__HOST__}}/web/images/vicfine05.jpg" alt="{{ data.title }}">
+            </div>
+            <div class="w-100 fl vi-c ps-re">
+                <img class="img-fiuld vi-cd1" src="{{__HOST__}}/web/images/vicfine07.jpg" alt="{{ data.title }}">
+                <img class="img-fiuld vi-cd2" src="{{__HOST__}}/web/images/vicfine06.jpg" alt="{{ data.title }}">
+                <img class="img-fiuld vi-cd3" src="{{__HOST__}}/web/images/vicfine10.png" alt="{{ data.title }}">
+            </div>
+            <div class="w-100 fl vi-d ps-re">
+                <img class="img-fiuld vi-dd1" src="{{__HOST__}}/web/images/vicfine08.jpg" alt="{{ data.title }}">
+                <img class="img-fiuld vi-dd2" src="{{__HOST__}}/web/images/vicfine09.jpg" alt="{{ data.title }}">
+                <img class="img-fiuld vi-dd3" src="{{__HOST__}}/web/images/vicfine11.png" alt="{{ data.title }}">
+                <span class="vi-dbg"></span>
+            </div>
+        </div>
+    </section>
+</main>
+{{ /block }}

@@ -1,0 +1,24 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<section class="container">
+    <div class="row">
+        <div class="w-100 d-flex flex-wrap mt-4">
+            <div class="w-100 mb-2"><img class="img-fiuld w-100" src="{{__HOST__}}/{{ data.banner }}" alt="{{ data.title }}"></div>
+            <div class="w-100"><img class="img-fiuld w-100" src="{{__HOST__}}/m_web/images/LouiseOdier02.jpg" alt="{{ data.title }}"></div>
+            <div class="w-100 d-flex flex-wrap">
+                <div class="col-12 d-flex flex-wrap joZscon pt-3 pb-3">
+                    <p class="loTit">LOUISE ODIER</p>
+                    <span>{{@data.content}}</span>
+                </div>
+            </div>
+            <div class="w-100 mb-2"><img class="img-fiuld w-100" src="{{__HOST__}}/m_web/images/LouiseOdier02.jpg" alt="{{ data.title }}"></div>
+            <div class="w-100 mb-2"><img class="img-fiuld w-100" src="{{__HOST__}}/m_web/images/LouiseOdier03.jpg" alt="{{ data.title }}"></div>
+            <div class="w-100 mb-1"><img class="img-fiuld w-100" src="{{__HOST__}}/m_web/images/LouiseOdier04.jpg" alt="{{ data.title }}"></div>
+            <div class="w-100 mb-2"><img class="img-fiuld w-100" src="{{__HOST__}}/m_web/images/LouiseOdier05.jpg" alt="{{ data.title }}"></div>
+            <div class="w-100 mb-2"><img class="img-fiuld w-100" src="{{__HOST__}}/m_web/images/LouiseOdier06.jpg" alt="{{ data.title }}"></div>
+            <div class="w-100 mb-2"><img class="img-fiuld w-100" src="{{__HOST__}}/m_web/images/LouiseOdier07.jpg" alt="{{ data.title }}"></div>
+        </div>
+    </div>
+</section>
+{{ /block }}

@@ -1,0 +1,167 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<article class="page-container">
+    <form class="form form-horizontal" action="" method="post" id="submit">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>名称：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="{{ data.title }}" placeholder="" id="title" name="title">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">LOGO图片：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="hidden" id="hiddenLogo" name="hiddenLogo" value="{{ data.logo }}" >  <!-- 存储原本banner图片路径 -->
+                <input type="file" name="logoFile" id="logoFile" /><br/>
+                <div id="previewBox" class="{{ if data.logo }} bannerPreview {{ /if }}">
+                    <img {{ if data.logo }}src="{{__HOST__}}/{{ data.logo }}"{{ /if }} id="bannerPreview" />
+                </div>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">域名：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="{{ data.domain }}" placeholder="" id="domain" name="domain">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">关键词：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="{{ data.keyWord }}" placeholder="" id="keyWord" name="keyWord">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">描述：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="{{ data.description }}" placeholder="" id="description" name="description">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">电话：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="{{ data.phone }}" placeholder="" id="phone" name="phone">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">地址：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="{{ data.address }}" placeholder="" id="address" name="address">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">备案号：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="{{ data.recordNo }}" placeholder="" id="recordNo" name="recordNo">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">内容：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <script id="editor" type="text/plain" style="width:100%;height:400px;"></script>
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <button class="btn btn-warning radius"> 确定 </button>
+            </div>
+        </div>
+    </form>
+</article>
+{{ /block }}
+
+{{ block 'footerContent' }}
+<!--请在下方写此页面业务相关的脚本-->
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script> 
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>   
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/webuploader/0.1.5/webuploader.min.js"></script> 
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/ueditor/1.4.3/ueditor.config.js"></script> 
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script> 
+<script type="text/javascript" src="{{__HOST__}}/admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript">
+window.onload = function() {
+    // 图片上传
+    function getFile(fileId,previewBox,picSrc) {
+        document.querySelector(fileId).onchange = function(){
+            //判断是否支持FileReader
+            if (window.FileReader) {
+                var reader = new FileReader();
+            } else {
+                alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+            }
+            //获取文件
+            var file = this.files[0];
+            var imageType = /^image\//;
+            //是否是图片
+            if (!imageType.test(file.type)) {
+                alert("请选择图片！");
+                return;
+            }
+            //读取完成
+            reader.onload = function(e) {
+                document.querySelector(previewBox).classList.add('bannerPreview');
+                //获取图片dom
+                var img = document.getElementById(picSrc);
+                //图片路径设置为读取的图片
+                img.src = e.target.result;
+                // console.log(e.target.result);
+                // console.log(reader.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+    getFile('#logoFile','#previewBox','bannerPreview');
+
+    // 富文本
+    var ue = UE.getEditor('editor');
+    ue.addListener("ready", function () {   // 给富文本框赋值
+        // editor准备好之后才可以使用  
+        ue.setContent(`{{@data.content}}`);
+    });
+
+    // 提交
+    getQue = ele=> document.querySelector(ele).value;
+    document.querySelector('#submit').addEventListener('submit',function(e) {
+        e.preventDefault();
+        // return false;
+        // 涉及到图片文件上传  要用new FormData()这种方式上传
+        var formdata = new FormData();
+        // formdata.append('id',getQue('#id'));  // 标题
+        formdata.append('title',getQue('#title'));  // 标题
+        // 判断  如果上传和隐藏的input都没有图片信息   则用上传的
+        if (document.querySelector('#logoFile').files[0] == undefined && document.querySelector('#hiddenLogo').defaultValue != '') {
+            formdata.append('logo',document.querySelector('#hiddenLogo').defaultValue);   // logo图片
+        }else {
+            formdata.append('logo',document.querySelector('#logoFile').files[0]);   // logo图片
+        }
+        formdata.append('domain',getQue('#domain'));    // 域名
+        formdata.append('keyWord',getQue('#keyWord'));    // 关键词
+        formdata.append('description',getQue('#description'));    // 描述
+        formdata.append('phone',getQue('#phone'));  // 电话
+        formdata.append('address',getQue('#address'));  // 地址
+        formdata.append('recordNo',getQue('#recordNo'));    // 备案号
+        formdata.append('content',ue.getContent());  // 富文本内容
+
+        // 判断title是否有  有就发请求
+        if(getQue('#title') !='') {    
+            axios.post('/admin/doSite', formdata)
+            .then(function (response) {
+                if(response.data.code == '001') {
+                    window.location.replace(location.href);
+                }
+            })
+            .catch(function (error) {
+                console.log(error);  
+            });
+        }else {
+            layer.msg('标题不能为空!',{icon:2,time:1000});
+        }
+    },false)
+}
+	
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+{{ /block }}

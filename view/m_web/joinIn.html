@@ -1,0 +1,14 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<section class="container">
+    <div class="row">
+        <div class="w-100 d-flex flex-wrap">
+            <div class="col-12 pt-4 pb-3 d-flex flex-wrap justify-content-center">
+                <h2 class="joZstit">{{ data.title }}</h2>
+            </div>
+            <div class="col-12 d-flex flex-wrap joZscon pb-4">{{@data.content}}</div>
+        </div>
+    </div>
+</section>
+{{ /block }}

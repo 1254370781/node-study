@@ -1,0 +1,14 @@
+{{ extend './common/main.html'}}
+
+{{block 'content'}}
+<main>
+    <section class="w-100 fl">
+        <div class="w-at">
+            <div class="w-100 fl jo-t">
+                <p class="jo-ttit">{{ data.title }}</p>
+                <div class="w-100">{{@data.content}}</div>
+            </div>
+        </div>
+    </section>
+</main>
+{{ /block }}

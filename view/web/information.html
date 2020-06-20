@@ -1,0 +1,138 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<main>
+    <section class="w-100 fl">
+        <div class="w-at">
+            <div class="w-100 fl en-mt">
+                <div class="en-t w-100 fl">
+                    <div class="en-tl fl">
+                        <img class="img-fiuld fl" src="{{ information.pic }}" alt="{{ information.title }}">
+                        <div class="fl en-tltxt">
+                            {{@information.content}}
+                            <!-- <p>凯利捷商贸有限公司成立于2011年，是中国一家领先且快速增长的高端服装企业。我们专职从事高端服装的
+                                设计、推广、营销及销售业务，产品涵盖西服、连身裙、短裙、长裤、针织衫、外套、大衣、皮草及配饰等。
+                                我们现有四大品牌：2011年推出"年青、浪漫、女人味"的凯利，2012年推出"从心悠雅"的Carolinge.Kai卡诺
+                                琳.凯，2013年推出奢华大气的VICFINE维珂芬高端核心品牌，以及在2013年推出"商务时装可以更艺术"的
+                                LOUISE ODIER路易欧帝商务男装品牌。四个品牌的门店数量接近30家，遍布全国10多个城市；我们的核心
+                                品牌VICFINE维珂芬和LOUISE ODIER路易欧帝品牌在行业影响力强。我们成立了专业品牌管理公司，拓展国
+                                内外品牌业务。</p>
+                            <p>凯利捷商贸有限公司经历八年的快速发展，亮眼的业绩赢得了诸多行业认同，同时也获得了国际设计师协会
+                                的高度认可。我们以专业的直营模式、以及大数据驱动的智能模式推出了高级定制，未来我们将秉持"创新驱
+                                动多品牌，做大做强VICFINE维珂芬和LOUISE ODIER路易欧帝品牌的方针策略，坚持开放创新、合作共赢的
+                                理念，多方式发展中高端男女装业务。</p>
+                            <p>我们是一家以人为本的企业，我们希望为各类人才搭建一个平台，大家在平台上贡献自己的智慧、经验和人脉
+                                等等，通过共同的努力实现共赢。我们致力于打造多品牌的时尚集团，力争在2020年成为行业的标杆企业，让
+                                世界感受中国品牌的魅力。</p> -->
+                        </div>
+                    </div>
+                    <div class="en-tr fr">
+                        <img class="img-fiuld" src="{{ information.banner }}" alt="{{ information.title }}">
+                    </div>
+                </div>
+                <div class="w-100 fl en-m ps-re">
+                    <img class="img-fiuld en-md1" src="{{ idea.banner }}" alt="{{ idea.title }}">
+                    <div class="en-mc">
+                        <p class="en-mctit">{{ idea.title }}</p>
+                        <p>{{@idea.content}}</p>
+                        <!-- <p>企业目标：创世界品牌，铸百年企业</p>
+                        <p>企业宗旨：创造完美时尚，倡导精致生活</p>
+                        <p>企业经营理念：品质为本，服务顾客，</p>
+                        <p>构筑连锁直营，创造双赢共享</p>
+                        <p>企业质量观念：市场化决策，现代化经营，</p>
+                        <p>系统化管理，专业化服务</p>
+                        <p>企业的愿景：引领时尚流行趋势</p>
+                        <p>企业人才观念：人力资源是企业生存的核心</p>
+                        <p>企业价值观念：诚信、务实、责任、勤俭、和谐、</p>
+                        <p>真诚和服务是企业生存的根本</p>
+                        <p>企业经营理念：装点人生，服务社会</p>
+                        <p>工作宗旨：努力奋斗，不断创新</p>
+                        <p>企业精神：奉献、进取、宽仁、合作</p>
+                        <p>道德理念：勤奋务实、正直善良、福而不骄、满而不溢、谦而不卑、刚柔相济</p>
+                        <p>座右铭：言必信，行必果</p> -->
+                    </div>
+                    <span class="en-md2">corporate philosophy</span>
+                </div>
+                <div class="en-g w-100 fl">
+                    <img class="img-fiuld en-gi fl" src="{{ brand.banner }}" alt="{{ brand.title }}">
+                    <img class="img-fiuld en-gi fl" src="{{ brand.pic }}" alt="{{ brand.title }}">
+                    <div class="fl en-gd">
+                        <img class="img-fiuld" src="web/images/enterprise06.jpg" alt="{{ brand.title }}">
+                        <div class="w-100 fl en-gdtxt">
+                            <p>{{ brand.title }}</p>
+                            <p>{{@brand.content}}</p>
+                            <!-- <p>LOUISE ODIER路易欧帝男装品牌源自香港，隶属君尚国际名品。由香港知名设计
+                                师Kai先生于1999年创立，融入独特的设计理念结合国际流行趋势，以经典的图纹、
+                                舒适的面料和世界一流的品质，引领高端时尚流行趋，诠释时尚经典的商务风，优
+                                雅睿智却彰显时尚内涵；以卓越品质、杰出创意、精湛工艺和精美绝伦的立体裁剪
+                                造就经典款式，优雅永恒，成为男装时尚艺术的象征。产品包括成衣、手提包、旅
+                                行用品、皮具、配饰、鞋履、腕表、高端珠宝及个性化订制服务等，产品远销售欧
+                                美10多个国家和地区，受国际时尚人士的青睐。</p>
+                            <p>君尚国际是集设计研发、生产、销售为一体的国际化品牌公司。我们“坚持国际品
+                                质、引领时尚趋势”的愿景。秉承“天行健，君子以自强不息，地势坤，君子以厚
+                                德载物，”尽展王者风范。塑造时尚品味的精品魅力男士。</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="en-g w-100 fl">
+                    <div class="en-gb fl">
+                        <p class="en-gbtit">{{ design.title }}</p>
+                        <p>{{@design.content}}</p>
+                        <!-- <p>LOUISE ODIER路易欧帝品牌服装设计追求的就是实用美与视觉美。融入独特的设计理念结合国际流行趋势，
+                            以经典的图纹、舒适的面料和世界一流的品质，引领高端时尚流行趋，诠释时尚经典的商务风，优雅睿智却
+                            彰显时尚内涵；以卓越品质、杰出创意、精湛工艺和精美绝伦的立体裁剪造就经典款式，优雅永恒，成为男
+                            装时尚艺术的象征。产品包括成衣、手提包、旅行用品、皮具、配饰、鞋履、腕表、高端珠宝及个性化订制
+                            服务等，运用一定的表现技法才得以完成造型。服装设计师不仅推敲了服装的设计构思，而且从创作的中挖
+                            掘灵感，使各方面的配套工作符合自己的设计意图。主要以商务精品、优雅时尚、轻休舒适，凌厉精致的演
+                            绎时尚精英男士的风采。</p> -->
+                    </div>
+                    <div class="en-gc fr">
+                        <span>Design concep</span>
+                    </div>
+                </div>
+                <div class="en-o fl w-100">
+                    <div class="en-ol fl ps-re">
+                        <img class="img-fiuld en-old" src="{{ location.banner }}" alt="{{ location.title }}">
+                    </div>
+                    <div class="en-or fl">
+                        <div class="en-ork w-100 fl">
+                            <span class="en-ork-sp">Brand Positioning</span>
+                            <p>{{ location.title }}</p>
+                            <p>{{@location.content}}</p>
+                            <!-- <p>LOUISE ODIER路易欧帝定位高端轻奢品牌，针对30到60岁的精英
+                                男士。坚持品牌个性并勇于创新，保持品牌影响力、主要品牌产品
+                                是男装。主题系列主要以商务精品、优雅时尚、轻休舒适，凌厉精
+                                致的演绎时尚精英男士的风采。</p> -->
+                        </div>
+                        <div class="en-ork w-100 fl">
+                            <span class="en-ork-sp">Brand Concept</span>
+                            <p>{{ linian.title }}</p>
+                            <p>{{@linian.content}}</p>
+                            <!-- <p>LOUISE ODIER路易欧帝品牌2013年诞生于誉有时尚之都的香港，
+                                并以其独特的风格与品味夺得众多业内人士的瞩目。他的设计既像
+                                大海般深沉又如阳光般炙烈，更让人吃惊的是他能将两者如此完美
+                                的融合在一起，使追求时尚的人们对“时尚”有了更深的理解。
+                                LOUISE ODIER路易欧帝品牌LOGO图标以圆形艺术，自然和谐、
+                                圆满完美。圆则满，满则圆，体现了品牌追求完美的精神。神秘却
+                                又醒目，沉稳而又内敛，自然而又经典，让人一眼看去便能解读出
+                                LOUISE ODIER路易欧帝的品牌内涵。</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100 fl en-p ps-re">
+                    <span class="en-pk"></span>
+                    <div class="en-ptxt">
+                        <p>{{ strategy.title }}</p>
+                        <p>{{@strategy.content}}</p>
+                        <!-- <p>LOUISE ODIER路易欧帝定位高端轻奢品牌，以精美的设计、细致完美的工
+                            艺和贴心的服务作为品牌运营核心，针对30到60岁的精英男士。推向高端消
+                            费人群，主要以成功人士、高级白领和影视明星等，品牌以直营模式立足中
+                            部，辐射全国，引领男装流行趋势。</p> -->
+                    </div>
+                    <img class="img-fiuld en-ping" src="{{ strategy.banner }}" alt="{{ strategy.title }}">
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{{ /block }}

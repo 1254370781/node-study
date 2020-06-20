@@ -1,0 +1,24 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<section class="container">
+    <div class="row">
+        <div class="w-100 d-flex flex-wrap flex-column mt-4 mb-4">
+            <div class="mb-2 w-100"><img class="img-fiuld w-100" src="{{ data.banner }}" alt="{{ data.title }}"></div>
+            <div class="w-100 d-flex flex-wrap">
+                <div class="col-12 d-flex flex-wrap coCon mt-3">
+                    <p class="coTit mb-2">成都凯利捷商贸有限公司</p>
+                    <p>地址：成都市锦江区工业园锦华路三段xx号汇融国际xx栋xx单元xx楼x号</p>
+                    <p>Add:No. xx, xxth Floor, Unit xx, Huirong International Building xx, No. x, Section x,Jinhua Road, Industrial Park, Jinjiang District, Chengdu</p>
+                    <p>Tel:+86 028 8662 2750  <a style="color: #848484;" href="http://www.beian.miit.gov.cn">粤ICP备16fr44343rf号</a></p>
+                    <div class="w-100 d-flex flex-wrap mt-2 mb-2 align-items-center">
+                        <img class="img-fiuld" src="{{ data.pic }}" alt="">
+                        <span class="ml-4">微信服务号</span>
+                    </div>
+                    <div class="w-100">{{@data.content}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ /block }}

@@ -1,0 +1,63 @@
+{{ extend './common/main.html' }}
+
+{{ block 'content' }}
+<section class="container">
+    <div class="row">
+        <div class="w-100 d-flex flex-wrap mt-4 mb-4">
+            <div class="w-100 mb-2"><img class="img-fiuld w-100" src="{{ information.banner }}" alt="{{ information.title }}"></div>
+            <div class="w-100 d-flex flex-wrap">
+                <div class="col-12 d-flex flex-wrap">
+                    <div class="w-100 mb-2"><img class="img-fiuld w-100" src="{{ information.pic }}" alt="{{ information.title }}"></div>
+                    <div class="w-100 d-flex flex-wrap joZscon pt-2 pb-1">
+                        <div class="viCon">{{@information.content}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 mb-2"><img class="img-fiuld w-100" src="{{ idea.banner }}" alt="{{ idea.title }}"></div>
+            <div class="w-100 d-flex flex-wrap">
+                <div class="col-12 d-flex flex-wrap joZscon pt-2 pb-1">
+                    <p class="w-100 abLn mb-2">{{ idea.title }}</p>
+                    <div class="viCon">{{@idea.content}}</div>
+                </div>
+            </div>
+            <div class="w-100 mb-2"><img class="img-fiuld w-100" src="{{ brand.banner }}" alt="{{ brand.title }}"></div>
+            <div class="w-100 d-flex flex-wrap">
+                <div class="col-12 d-flex flex-wrap">
+                <div class="w-100 mb-2"><img class="img-fiuld w-100" src="{{ brand.pic }}" alt="{{ brand.title }}"></div>
+                    <div class="w-100 d-flex flex-wrap joZscon pt-2 pb-1">
+                        <p class="w-100 abLn mb-2">{{ brand.title }}</p>
+                        <div class="viCon">{{@brand.content}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 mb-2"><img class="img-fiuld w-100" src="{{ design.banner }}" alt="{{ design.title }}"></div>
+            <div class="w-100 d-flex flex-wrap">
+                <div class="col-12 d-flex flex-wrap joZscon pt-2 pb-1">
+                    <p class="w-100 abLn mb-2">{{ design.title }}</p>
+                    <div class="viCon">{{@design.content}}</div>
+                </div>
+            </div>
+            <div class="w-100 mb-2"><img class="img-fiuld w-100" src="{{ location.banner }}" alt="{{ location.title }}"></div>
+            <div class="w-100 d-flex flex-wrap">
+                <div class="col-12 d-flex flex-wrap joZscon pt-2 pb-1">
+                    <p class="w-100 abLn mb-2">{{ location.title }}</p>
+                    <div class="viCon">{{@location.content}}</div>
+                </div>
+            </div>
+            <div class="w-100 d-flex flex-wrap">
+                <div class="col-12 d-flex flex-wrap joZscon pt-2 pb-1">
+                    <p class="w-100 abLn mb-2">{{ linian.title }}</p>
+                    <div class="viCon">{{@linian.content}}</div>
+                </div>
+            </div>
+            <div class="w-100 mb-2"><img class="img-fiuld w-100" src="{{ strategy.banner }}" alt="{{ strategy.title }}"></div>
+            <div class="w-100 d-flex flex-wrap">
+                <div class="col-12 d-flex flex-wrap joZscon pt-2 pb-1">
+                    <p class="w-100 abLn mb-2">{{ strategy.title }}</p>
+                    <div class="viCon">{{@strategy.content}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ /block }}
